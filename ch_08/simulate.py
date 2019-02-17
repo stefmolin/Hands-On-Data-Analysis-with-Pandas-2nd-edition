@@ -60,6 +60,9 @@ if __name__ == '__main__':
 
     try:
         start = dt.datetime(*map(int, args.start_date.split('-')))
+    except TypeError:
+        logger.error('Start date must be in the format "YYYY-MM-DD"')
+        raise
     except ValueError:
         logger.warning(
             f'Could not interpret {args.start_date}, '
