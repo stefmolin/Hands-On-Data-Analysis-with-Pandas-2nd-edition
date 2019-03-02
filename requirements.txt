@@ -1,3 +1,4 @@
+graphviz==0.10.1
 jupyter==1.0.0
 jupyterlab==0.35.0
 matplotlib==3.0.2
@@ -10,3 +11,4 @@ seaborn==0.9.0
 statsmodels==0.9.0
 git+https://github.com/stefmolin/log-in-attempt-simulator.git#master
 git+https://github.com/stefmolin/stock-analysis.git#master
+
