@@ -3,7 +3,7 @@ import datetime as dt
 import os
 import logging
 
-import log_in_attempt_simulator as sim
+import login_attempt_simulator as sim
 
 user_base_file = 'user_data/user_base.txt'
 user_ip_mapping_file = 'user_data/user_ips.json'
@@ -43,12 +43,12 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
     user_ip_mapping_file = args.ip or user_ip_mapping_file
-    
+
     if args.make:
         logger.warning('Creating new user base and mapping IPs to them.')
-        
+
         user_base_file = args.userbase or user_base_file
-        
+
         # create usernames and write to file
         sim.utils.make_userbase(user_base_file)
 
@@ -69,14 +69,14 @@ if __name__ == '__main__':
             'using February 2, 2019 at 7AM as start instead'
         )
         start = dt.datetime(2019, 2, 1, 7, 0)
-        
-        
+
+
     end = start + dt.timedelta(days=args.days)
-    
+
     try:
         logger.info(f'Simulating {args.days} days...')
-        simulator = sim.LogInAttemptSimulator(user_ip_mapping_file, start, end)
-        simulator.simulate()
+        simulator = sim.LoginAttemptSimulator(user_ip_mapping_file, start, end)
+        simulator.simulate(attack_prob=0.1, try_all_users_prob=0.65, vary_ips=False)
 
         # save logs
         logger.info('Saving logs')
