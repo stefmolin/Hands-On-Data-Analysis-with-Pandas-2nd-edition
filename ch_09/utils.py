@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from sklearn.metrics import roc_curve, roc_auc_score, confusion_matrix
+from sklearn.metrics import r2_score, roc_curve, roc_auc_score, confusion_matrix
 
 def elbow_point(
     data, pipeline, kmeans_step_name='kmeans', k_range=range(1, 11)
@@ -41,6 +41,25 @@ def plot_residuals(y_test, preds):
     residuals.plot(kind='kde', ax=axes[1])
     plt.suptitle('Residuals')
     return axes
+
+
+def adjusted_r2(model, X, y):
+	"""
+    Calculate the adjusted R^2.
+
+    Parameters:
+        - model: Estimator object with a `predict()` method
+        - X: The values to use for prediction.
+        - y: The true values for scoring.
+
+    Returns:
+        The adjusted R^2 score.
+    """
+	r2 = r2_score(y, model.predict(X))
+	n_obs, n_regressors = X.shape
+	adj_r2 = 1 - (1 - r2) * (n_obs - 1)/(n_obs - n_regressors - 1)
+	return adj_r2
+
 
 def plot_roc(y_test, preds):
     """
