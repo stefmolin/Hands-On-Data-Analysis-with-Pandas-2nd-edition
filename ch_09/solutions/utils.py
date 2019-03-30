@@ -28,7 +28,7 @@ def plot_residuals(y_test, preds):
 
     Parameters: 
         - y_test: The true values for y
-        - preds: The predicted values for y
+        - preds: The predicted values for y as probabilities
 
     Returns:
         Subplots of residual scatter plot and 
@@ -48,7 +48,7 @@ def plot_roc(y_test, preds):
 
     Parameters: 
         - y_test: The true values for y
-        - preds: The predicted values for y
+        - preds: The predicted values for y as probabilities
 
     Returns:
         Plotted ROC curve.
