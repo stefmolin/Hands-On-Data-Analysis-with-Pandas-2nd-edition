@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from sklearn.decomposition import PCA
-from sklearn.metrics import roc_curve, roc_auc_score, confusion_matrix
+from sklearn.metrics import r2_score, roc_curve, roc_auc_score, confusion_matrix
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 
@@ -26,6 +26,23 @@ def elbow_point(
     plt.close()
 
     return fig
+
+def adjusted_r2(model, X, y):
+	"""
+    Calculate the adjusted R^2.
+
+    Parameters:
+        - model: Estimator object with a `predict()` method
+        - X: The values to use for prediction.
+        - y: The true values for scoring.
+
+    Returns:
+        The adjusted R^2 score.
+    """
+	r2 = r2_score(y, model.predict(X))
+	n_obs, n_regressors = X.shape
+	adj_r2 = 1 - (1 - r2) * (n_obs - 1)/(n_obs - n_regressors - 1)
+	return adj_r2
 
 def plot_residuals(y_test, preds):
     """
@@ -53,7 +70,7 @@ def plot_roc(y_test, preds):
 
     Parameters: 
         - y_test: The true values for y
-        - preds: The predicted values for y
+        - preds: The predicted values for y as probabilities
 
     Returns:
         Plotted ROC curve.
@@ -97,21 +114,21 @@ def plot_multi_class_roc(y_test, preds):
     """
     Plot ROC curve to evaluate classification.
 
-    Parameters: 
+    Parameters:
         - y_test: The true values for y
-        - preds: The predicted values for y
+        - preds: The predicted values for y as probabilities
 
     Returns:
         ROC curve.
     """
-    data = pd.DataFrame({'actual' : y_test, 'predicted': preds})
     fig, ax = plt.subplots(1, 1)
     ax.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='baseline')
     class_labels = np.sort(y_test.unique())
-    for class_label in class_labels:
-        class_data = data.apply(lambda x: np.where(x == class_label, 1, 0))
-        fpr, tpr, thresholds = roc_curve(class_data.actual, class_data.predicted)
-        auc = roc_auc_score(class_data.actual, class_data.predicted)
+    for i, class_label in enumerate(class_labels):
+        actuals = np.where(y_test == class_label, 1, 0)
+        predicted_probabilities = preds[:,i]
+        fpr, tpr, thresholds = roc_curve(actuals, predicted_probabilities)
+        auc = roc_auc_score(actuals, predicted_probabilities)
         ax.plot(fpr, tpr, lw=2, label=f"""class {class_label}; AUC: {auc:.2}""")
     plt.legend()
     plt.title('Multi-class ROC curve')
