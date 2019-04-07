@@ -64,26 +64,6 @@ def plot_residuals(y_test, preds):
     plt.suptitle('Residuals')
     return axes
 
-def plot_roc(y_test, preds):
-    """
-    Plot ROC curve to evaluate classification.
-
-    Parameters: 
-        - y_test: The true values for y
-        - preds: The predicted values for y as probabilities
-
-    Returns:
-        Plotted ROC curve.
-    """
-    fpr, tpr, thresholds = roc_curve(y_test, preds)
-    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='baseline')
-    plt.plot(fpr, tpr, color='red', lw=2, label='model')
-    plt.legend(loc='lower right')
-    plt.title('ROC curve')
-    plt.xlabel('False Positive Rate (FPR)')
-    plt.ylabel('True Positive Rate (TPR)')
-    plt.annotate(f'AUC: {roc_auc_score(y_test, preds):.2}', xy=(.43, .025))
-
 def confusion_matrix_visual(y_true, y_pred, class_labels, ax=None, title=None, **kwargs):
     """
     Create a confusion matrix heatmap to evaluate classification.
@@ -114,18 +94,60 @@ def confusion_matrix_visual(y_true, y_pred, class_labels, ax=None, title=None, *
     axes.set_title(title or 'Confusion Matrix')
     return axes
 
-def plot_multi_class_roc(y_test, preds):
+def find_threshold(y_test, y_preds, fpr_below, tpr_above):
+    """
+    Find the threshold to use with `predict_proba()` for classification
+    based on the maximum acceptable FPR and the minimum acceptable TPR.
+    
+    Parameters:
+        - y_test: The actual labels.
+        - y_preds: The predicted labels.
+        - fpr_below: The maximum acceptable FPR.
+        - tpr_above: The minimum acceptable TPR.
+        
+    Returns:
+        The thresholds were the criteria are met.
+    """
+    fpr, tpr, thresholds = roc_curve(y_test, y_preds)
+    return thresholds[(fpr <= fpr_below) & (tpr >= tpr_above)]
+
+def plot_roc(y_test, preds, ax=None):
+    """
+    Plot ROC curve to evaluate classification.
+
+    Parameters: 
+        - y_test: The true values for y
+        - preds: The predicted values for y as probabilities
+        - ax: The Axes to plot on
+
+    Returns:
+        Plotted ROC curve.
+    """
+    if not ax:
+        fig, ax = plt.subplots(1, 1)
+    fpr, tpr, thresholds = roc_curve(y_test, preds)
+    ax.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='baseline')
+    ax.plot(fpr, tpr, color='red', lw=2, label='model')
+    ax.legend(loc='lower right')
+    ax.set_title('ROC curve')
+    ax.set_xlabel('False Positive Rate (FPR)')
+    ax.set_ylabel('True Positive Rate (TPR)')
+    ax.annotate(f'AUC: {roc_auc_score(y_test, preds):.2}', xy=(.43, .025))
+
+def plot_multi_class_roc(y_test, preds, ax=None):
     """
     Plot ROC curve to evaluate classification.
 
     Parameters:
         - y_test: The true values for y
         - preds: The predicted values for y as probabilities
+        - ax: The Axes to plot on
 
     Returns:
         ROC curve.
     """
-    fig, ax = plt.subplots(1, 1)
+    if not ax:
+        fig, ax = plt.subplots(1, 1)
     ax.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='baseline')
     class_labels = np.sort(y_test.unique())
     for i, class_label in enumerate(class_labels):
@@ -134,10 +156,10 @@ def plot_multi_class_roc(y_test, preds):
         fpr, tpr, thresholds = roc_curve(actuals, predicted_probabilities)
         auc = roc_auc_score(actuals, predicted_probabilities)
         ax.plot(fpr, tpr, lw=2, label=f"""class {class_label}; AUC: {auc:.2}""")
-    plt.legend()
-    plt.title('Multi-class ROC curve')
-    plt.xlabel('False Positive Rate (FPR)')
-    plt.ylabel('True Positive Rate (TPR)')
+    ax.legend()
+    ax.set_title('Multi-class ROC curve')
+    ax.set_xlabel('False Positive Rate (FPR)')
+    ax.set_ylabel('True Positive Rate (TPR)')
 
 def pca_scatter(X, labels, cbar_label, color_map='brg'):
     """
