@@ -231,3 +231,11 @@ def pca_scatter_3d(X, labels, cbar_label, color_map='brg', elev=10, azim=15):
         )]
     )
     return ax
+
+class PartialFitPipeline(Pipeline):
+    
+    def partial_fit(self, X, y):
+        for _, step in self.steps[:-1]:
+            X = step.fit_transform(X)
+        self.steps[-1][1].partial_fit(X, y)
+        return self
