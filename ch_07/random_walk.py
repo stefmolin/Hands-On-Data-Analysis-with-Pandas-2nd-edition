@@ -37,8 +37,8 @@ def random_walk_stock_comparison(df, choices=[-1, 1], probs=[0.5, 0.5], seed=2):
                 walk.append(walk[-1] + step)
             ax.plot(df.index, walk)
 
-    print(f'real stock is at location {stock_location}')
+    real_stock = f'real stock is at location {stock_location}'
 
     plt.close()
 
-    return fig
+    return real_stock, fig
