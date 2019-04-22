@@ -1,0 +1,62 @@
+alert,type,title,place,magType,mag,time
+,earthquake,"M 5.0 - 165km NNW of Flying Fish Cove, Christmas Island","165km NNW of Flying Fish Cove, Christmas Island",mww,5.0,1539459504090
+green,earthquake,"M 6.7 - 262km NW of Ozernovskiy, Russia","262km NW of Ozernovskiy, Russia",mww,6.7,1539429023560
+green,earthquake,"M 5.6 - 128km SE of Kimbe, Papua New Guinea","128km SE of Kimbe, Papua New Guinea",mww,5.6,1539312723620
+green,earthquake,"M 6.5 - 148km S of Severo-Kuril'sk, Russia","148km S of Severo-Kuril'sk, Russia",mww,6.5,1539213362130
+green,earthquake,"M 6.2 - 94km SW of Kokopo, Papua New Guinea","94km SW of Kokopo, Papua New Guinea",mww,6.2,1539208835130
+green,earthquake,"M 5.9 - 117km ESE of Kimbe, Papua New Guinea","117km ESE of Kimbe, Papua New Guinea",mww,5.9,1539205996680
+green,earthquake,"M 5.9 - 113km ESE of Kimbe, Papua New Guinea","113km ESE of Kimbe, Papua New Guinea",mww,5.9,1539205141060
+green,earthquake,"M 7.0 - 117km E of Kimbe, Papua New Guinea","117km E of Kimbe, Papua New Guinea",mww,7.0,1539204500290
+green,earthquake,"M 6.1 - 132km E of Kimbe, Papua New Guinea","132km E of Kimbe, Papua New Guinea",mb,6.1,1539204326420
+green,earthquake,"M 5.0 - 61km SSW of Chignik Lake, Alaska","61km SSW of Chignik Lake, Alaska",ml,5.0,1539152878406
+,earthquake,"M 5.3 - 65km NNW of Lae, Papua New Guinea","65km NNW of Lae, Papua New Guinea",mb,5.3,1539150837980
+,earthquake,"M 5.4 - 62km NW of Finschhafen, Papua New Guinea","62km NW of Finschhafen, Papua New Guinea",mww,5.4,1539136980090
+green,earthquake,"M 4.0 - 71km SW of Kaktovik, Alaska","71km SW of Kaktovik, Alaska",ml,4.0,1539069081499
+,earthquake,"M 5.1 - 13km E of Palu, Indonesia","13km E of Palu, Indonesia",mb,5.1,1539033346530
+,earthquake,"M 5.1 - 14km ENE of Sambelia, Indonesia","14km ENE of Sambelia, Indonesia",mww,5.1,1538935041200
+green,earthquake,"M 4.0 - 60km WNW of Valdez, Alaska","60km WNW of Valdez, Alaska",ml,4.0,1538904354275
+,earthquake,"M 5.0 - 11km ESE of Kimbe, Papua New Guinea","11km ESE of Kimbe, Papua New Guinea",mww,5.0,1538842952660
+green,earthquake,"M 3.8 - 5km SW of Tres Pinos, CA","5km SW of Tres Pinos, CA",mw,3.83,1538746177550
+green,earthquake,"M 4.0 - 67km SSW of Kaktovik, Alaska","67km SSW of Kaktovik, Alaska",ml,4.0,1538658776412
+,earthquake,"M 5.3 - 29km SSW of Nggongi, Indonesia","29km SSW of Nggongi, Indonesia",mb,5.3,1538570285120
+,earthquake,"M 5.0 - 38km S of Nggongi Satu, Indonesia","38km S of Nggongi Satu, Indonesia",mww,5.0,1538560686080
+,earthquake,"M 5.0 - 50km WSW of Kasiguncu, Indonesia","50km WSW of Kasiguncu, Indonesia",mb,5.0,1538456366290
+green,earthquake,"M 5.6 - 33km SSW of Nggongi Satu, Indonesia","33km SSW of Nggongi Satu, Indonesia",mww,5.6,1538455771470
+green,earthquake,"M 5.9 - 30km SSW of Nggongi, Indonesia","30km SSW of Nggongi, Indonesia",mww,5.9,1538439405760
+green,earthquake,"M 6.0 - 33km S of Nggongi Satu, Indonesia","33km S of Nggongi Satu, Indonesia",mww,6.0,1538438383070
+,earthquake,"M 5.2 - 25km N of Palu, Indonesia","25km N of Palu, Indonesia",mww,5.2,1538437599550
+,earthquake,"M 5.4 - 31km S of Nggongi Satu, Indonesia","31km S of Nggongi Satu, Indonesia",mb,5.4,1538436426090
+,earthquake,"M 5.0 - 33km SSW of Nggongi Satu, Indonesia","33km SSW of Nggongi Satu, Indonesia",mww,5.0,1538435522580
+,earthquake,"M 5.1 - 101km NNW of Palu, Indonesia","101km NNW of Palu, Indonesia",mww,5.1,1538372615190
+,earthquake,"M 5.0 - 106km NNW of Lae, Papua New Guinea","106km NNW of Lae, Papua New Guinea",mb,5.0,1538344682130
+green,earthquake,"M 6.7 - 263km NNE of Ndoi Island, Fiji","263km NNE of Ndoi Island, Fiji",mww,6.7,1538304744240
+,earthquake,"M 5.1 - 49km W of Kasiguncu, Indonesia","49km W of Kasiguncu, Indonesia",mww,5.1,1538217018480
+,earthquake,"M 5.1 - 53km W of Kasiguncu, Indonesia","53km W of Kasiguncu, Indonesia",mb,5.1,1538206811760
+green,earthquake,"M 4.4 - 1km SE of Delta, B.C., MX","1km SE of Delta, B.C., MX",mw,4.41,1538187466720
+,earthquake,"M 5.0 - 55km WSW of Kasiguncu, Indonesia","55km WSW of Kasiguncu, Indonesia",mww,5.0,1538169841560
+,earthquake,"M 5.0 - 45km SSW of Palu, Indonesia","45km SSW of Palu, Indonesia",mb,5.0,1538148942250
+,earthquake,"M 5.4 - 113km NNW of Palu, Indonesia","113km NNW of Palu, Indonesia",mb,5.4,1538144760960
+,earthquake,"M 5.2 - 58km S of Palu, Indonesia","58km S of Palu, Indonesia",mb,5.2,1538141984430
+green,earthquake,"M 5.7 - 107km N of Palu, Indonesia","107km N of Palu, Indonesia",ms_20,5.7,1538141730630
+,earthquake,"M 5.1 - 47km N of Palu, Indonesia","47km N of Palu, Indonesia",mb,5.1,1538137653240
+,earthquake,"M 5.2 - 68km SSE of Palu, Indonesia","68km SSE of Palu, Indonesia",mb,5.2,1538132811150
+green,earthquake,"M 5.7 - 17km NNE of Palu, Indonesia","17km NNE of Palu, Indonesia",mb,5.7,1538131825150
+,earthquake,"M 5.1 - 42km N of Palu, Indonesia","42km N of Palu, Indonesia",mb,5.1,1538131664560
+,earthquake,"M 5.4 - 24km N of Palu, Indonesia","24km N of Palu, Indonesia",mb,5.4,1538131143050
+green,earthquake,"M 5.8 - 21km SSE of Palu, Indonesia","21km SSE of Palu, Indonesia",mb,5.8,1538130304440
+green,earthquake,"M 5.7 - 17km E of Palu, Indonesia","17km E of Palu, Indonesia",mb,5.7,1538129809140
+green,earthquake,"M 5.8 - 99km N of Palu, Indonesia","99km N of Palu, Indonesia",mb,5.8,1538129660450
+red,earthquake,"M 7.5 - 78km N of Palu, Indonesia","78km N of Palu, Indonesia",mww,7.5,1538128963480
+,earthquake,"M 5.0 - 60km N of Palu, Indonesia","60km N of Palu, Indonesia",mb,5.0,1538123098480
+,earthquake,"M 5.4 - 77km NNE of Palu, Indonesia","77km NNE of Palu, Indonesia",mb,5.4,1538118198440
+green,earthquake,"M 6.1 - 55km NNW of Palu, Indonesia","55km NNW of Palu, Indonesia",mww,6.1,1538118001950
+,earthquake,"M 5.2 - 91km WNW of Panguna, Papua New Guinea","91km WNW of Panguna, Papua New Guinea",mww,5.2,1538063612790
+,earthquake,"M 5.1 - 117km N of Saumlaki, Indonesia","117km N of Saumlaki, Indonesia",mb,5.1,1538026140750
+,earthquake,"M 5.1 - 19km WNW of Langsa, Indonesia","19km WNW of Langsa, Indonesia",mww,5.1,1537984301360
+,earthquake,"M 5.0 - 85km W of Manokwari, Indonesia","85km W of Manokwari, Indonesia",mww,5.0,1537954061090
+,earthquake,"M 5.0 - 10km WSW of Kainantu, Papua New Guinea","10km WSW of Kainantu, Papua New Guinea",mb,5.0,1537760541200
+,earthquake,"M 5.4 - 228km S of Taron, Papua New Guinea","228km S of Taron, Papua New Guinea",mb,5.4,1537427126700
+,earthquake,"M 5.1 - 278km SE of Pondaguitan, Philippines","278km SE of Pondaguitan, Philippines",mb,5.1,1537411002190
+green,earthquake,"M 5.1 - 64km SSW of Kaktovik, Alaska","64km SSW of Kaktovik, Alaska",ml,5.1,1537274456960
+,earthquake,"M 5.2 - 126km N of Dili, East Timor","126km N of Dili, East Timor",mb,5.2,1537262729590
+,earthquake,"M 5.1 - 34km NW of Finschhafen, Papua New Guinea","34km NW of Finschhafen, Papua New Guinea",mb,5.1,1537236235470
