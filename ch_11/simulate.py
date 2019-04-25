@@ -5,15 +5,28 @@ import logging
 
 import login_attempt_simulator as sim
 
-user_base_file = 'user_data/user_base.txt'
-user_ip_mapping_file = 'user_data/user_ips.json'
-attempt_log_file = 'logs/log.csv'
-hack_log_file = 'logs/attacks.csv'
-
 # Logging configuration
 FORMAT = '[%(levelname)s] [ %(name)s ] %(message)s'
 logging.basicConfig(level=logging.INFO, format=FORMAT)
 logger = logging.getLogger(os.path.basename(__file__))
+
+def get_simulation_file_path(path_provided, directory, default_file):
+    """Get the path to the file creating the directory and using the default if necessary."""
+    if path_provided:
+        file = path_provided
+    else:
+        if not os.path.exists(directory):
+            os.mkdir(directory)
+        file = os.path.join(directory, default_file)
+    return file
+
+def get_user_base_file_path(path_provided, default_file):
+    """Get the path for a user_data directory file."""
+    return get_simulation_file_path(path_provided, 'user_data', default_file)
+
+def get_log_file_path(path_provided, default_file):
+    """Get the path for a logs directory file."""
+    return get_simulation_file_path(path_provided, 'logs', default_file)
 
 if __name__ == '__main__':
     # command line argument parsing
@@ -35,7 +48,7 @@ if __name__ == '__main__':
         help="probability attacker tries to guess credentials for all usernames"
     )
     parser.add_argument(
-        "-s", "--stealthy", action='store_true', help="be stealthy? (vary IPs?)"
+        "-s", "--stealthy", action='store_true', help="be stealthy? (vary IP addresses?)"
     )
     parser.add_argument(
         "-m", "--make", action='store_true', help="make userbase"
@@ -44,7 +57,7 @@ if __name__ == '__main__':
         "-u", "--userbase", help="file to write the userbase to"
     )
     parser.add_argument(
-        "-i", "--ip", help="file to write the user-ip map to"
+        "-i", "--ip", help="file to write the user-ip address map to"
     )
     parser.add_argument(
         "-l", "--log", help="file to write the attempt log to"
@@ -53,17 +66,17 @@ if __name__ == '__main__':
         "-hl", "--hacklog", help="file to write the hack log to"
     )
     args = parser.parse_args()
-    user_ip_mapping_file = args.ip or user_ip_mapping_file
 
     if args.make:
-        logger.warning('Creating new user base and mapping IPs to them.')
+        logger.warning('Creating new user base and mapping IP addresses to them.')
 
-        user_base_file = args.userbase or user_base_file
+        user_base_file = get_user_base_file_path(args.userbase, 'user_base.txt')
+        user_ip_mapping_file = get_user_base_file_path(args.ip, 'user_ips.json')
 
         # create usernames and write to file
         sim.utils.make_userbase(user_base_file)
 
-        # create one or more IPs per user and save mapping to file
+        # create one or more IP addresses per user and save mapping to file
         valid_users = sim.utils.get_valid_users(user_base_file)
         sim.utils.save_user_ips(
             sim.utils.assign_ip_addresses(valid_users), user_ip_mapping_file
@@ -95,8 +108,8 @@ if __name__ == '__main__':
 
         # save logs
         logger.info('Saving logs')
-        simulator.save_hack_log(args.hacklog or hack_log_file)
-        simulator.save_log(args.log or attempt_log_file)
+        simulator.save_hack_log(get_log_file_path(args.hacklog, 'attacks.csv'))
+        simulator.save_log(get_log_file_path(args.log, 'log.csv'))
 
         logger.info('All done!')
     except:
