@@ -14,7 +14,7 @@ def std_from_mean_kde(data):
     mean_mag, std_mean = data.mean(), data.std()
     
     ax = data.plot(kind='kde')
-    ax.axvline(mean_mag, color='b', alpha=0.2)
+    ax.axvline(mean_mag, color='b', alpha=0.2, label='mean')
     
     colors = ['green', 'orange', 'red']
     multipliers = [1, 2, 3]
