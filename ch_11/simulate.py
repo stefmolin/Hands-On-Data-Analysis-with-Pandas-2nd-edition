@@ -66,12 +66,12 @@ if __name__ == '__main__':
         "-hl", "--hacklog", help="file to write the hack log to"
     )
     args = parser.parse_args()
+    user_ip_mapping_file = get_user_base_file_path(args.ip, 'user_ips.json')
 
     if args.make:
         logger.warning('Creating new user base and mapping IP addresses to them.')
 
         user_base_file = get_user_base_file_path(args.userbase, 'user_base.txt')
-        user_ip_mapping_file = get_user_base_file_path(args.ip, 'user_ips.json')
 
         # create usernames and write to file
         sim.utils.make_userbase(user_base_file)
@@ -90,9 +90,9 @@ if __name__ == '__main__':
     except ValueError:
         logger.warning(
             f'Could not interpret {args.start_date}, '
-            'using February 2, 2019 at 7AM as start instead'
+            'using January 1, 2019 at 12AM as start instead'
         )
-        start = dt.datetime(2019, 2, 1, 7, 0)
+        start = dt.datetime(2019, 1, 1)
 
 
     end = start + dt.timedelta(days=args.days)
