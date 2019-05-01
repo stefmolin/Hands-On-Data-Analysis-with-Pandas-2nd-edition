@@ -1,4 +1,5 @@
 import random
+import string
 
 import matplotlib.pyplot as plt
 
@@ -18,7 +19,7 @@ def random_walk_stock_comparison(df, choices=[-1, 1], probs=[0.5, 0.5], seed=2):
 
     Returns:
         Prints the location of the actual data and 
-        returns the matplotlib Figure object.        
+        returns the matplotlib Axes object.        
     """
     random.seed(seed)
 
@@ -36,9 +37,10 @@ def random_walk_stock_comparison(df, choices=[-1, 1], probs=[0.5, 0.5], seed=2):
             for step in steps:
                 walk.append(walk[-1] + step)
             ax.plot(df.index, walk)
+        ax.set_ylabel('price')
+        
+        ax.set_title(string.ascii_uppercase[i])
 
-    real_stock = f'real stock is at location {stock_location}'
-
-    plt.close()
-
-    return real_stock, fig
+    real_stock = f'real stock is at location {string.ascii_uppercase[stock_location]}'
+    
+    return real_stock, axes
