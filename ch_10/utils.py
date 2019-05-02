@@ -11,21 +11,32 @@ from sklearn.preprocessing import MinMaxScaler
 def elbow_point(
     data, pipeline, kmeans_step_name='kmeans', k_range=range(1, 11)
 ):
-    """Graph the elbow point to find the optimal k for clustering"""
+    """
+    Graph the elbow point to find the optimal k for k-means clustering.
+
+    Parameters:
+        - data: The features to use
+        - pipeline: The scikit-learn pipeline with KMeans
+        - kmeans_step_name: The name of the step in the pipeline that is KMeans
+        - k_range: The values of `k` to try
+
+    Returns:
+        A matplotlib Axes object
+    """
     scores = []
     for k in k_range:
         pipeline.named_steps[kmeans_step_name].n_clusters = k
         pipeline.fit(data)
         scores.append(pipeline.score(data) * -1)
 
-    fig = plt.figure()
-    plt.plot(k_range, scores, 'bo-')
-    plt.xlabel('k')
-    plt.ylabel('value of data on objective function')
-    plt.suptitle('Elbow Point Plot')
-    plt.close()
+    fig, axes = plt.subplots()
+    axes.plot(k_range, scores, 'bo-')
+    axes.set_xlabel('k')
+    axes.set_ylabel('value of data on objective function')
+    axes.set_title('Elbow Point Plot')
 
-    return fig
+    return axes
+
 
 def adjusted_r2(model, X, y):
 	"""
@@ -44,6 +55,7 @@ def adjusted_r2(model, X, y):
 	adj_r2 = 1 - (1 - r2) * (n_obs - 1)/(n_obs - n_regressors - 1)
 	return adj_r2
 
+
 def plot_residuals(y_test, preds):
     """
     Plot residuals to evaluate regression.
@@ -59,10 +71,17 @@ def plot_residuals(y_test, preds):
     residuals = y_test - preds
 
     fig, axes = plt.subplots(1, 2, figsize=(15, 3))
+
     axes[0].scatter(np.arange(residuals.shape[0]), residuals)
+    axes[0].set_xlabel('Observation')
+    axes[0].set_ylabel('Residual')
+
     residuals.plot(kind='kde', ax=axes[1])
+    axes[1].set_xlabel('Residual')
+
     plt.suptitle('Residuals')
     return axes
+
 
 def plot_roc(y_test, preds):
     """
@@ -76,13 +95,20 @@ def plot_roc(y_test, preds):
         Plotted ROC curve.
     """
     fpr, tpr, thresholds = roc_curve(y_test, preds)
-    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='baseline')
-    plt.plot(fpr, tpr, color='red', lw=2, label='model')
-    plt.legend(loc='lower right')
-    plt.title('ROC curve')
-    plt.xlabel('False Positive Rate (FPR)')
-    plt.ylabel('True Positive Rate (TPR)')
-    plt.annotate(f'AUC: {roc_auc_score(y_test, preds):.2}', xy=(.43, .025))
+
+    fig, axes = plt.subplots()
+
+    axes.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='baseline')
+    axes.plot(fpr, tpr, color='red', lw=2, label='model')
+
+    axes.legend(loc='lower right')
+    axes.set_title('ROC curve')
+    axes.set_xlabel('False Positive Rate (FPR)')
+    axes.set_ylabel('True Positive Rate (TPR)')
+
+    axes.annotate(f'AUC: {roc_auc_score(y_test, preds):.2}', xy=(.43, .025))
+
+    return axes
 
 def confusion_matrix_visual(y_true, y_pred, class_labels, **kwargs):
     """
@@ -122,7 +148,9 @@ def plot_multi_class_roc(y_test, preds):
         ROC curve.
     """
     fig, ax = plt.subplots(1, 1)
+
     ax.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='baseline')
+
     class_labels = np.sort(y_test.unique())
     for i, class_label in enumerate(class_labels):
         actuals = np.where(y_test == class_label, 1, 0)
@@ -130,10 +158,12 @@ def plot_multi_class_roc(y_test, preds):
         fpr, tpr, thresholds = roc_curve(actuals, predicted_probabilities)
         auc = roc_auc_score(actuals, predicted_probabilities)
         ax.plot(fpr, tpr, lw=2, label=f"""class {class_label}; AUC: {auc:.2}""")
+
     plt.legend()
     plt.title('Multi-class ROC curve')
     plt.xlabel('False Positive Rate (FPR)')
     plt.ylabel('True Positive Rate (TPR)')
+    return ax
 
 def pca_scatter(X, labels, cbar_label, color_map='brg'):
     """

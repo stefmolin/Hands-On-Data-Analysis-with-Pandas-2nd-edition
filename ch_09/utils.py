@@ -6,21 +6,31 @@ from sklearn.metrics import r2_score, roc_curve, roc_auc_score, confusion_matrix
 def elbow_point(
     data, pipeline, kmeans_step_name='kmeans', k_range=range(1, 11)
 ):
-    """Graph the elbow point to find the optimal k for clustering"""
+    """
+    Graph the elbow point to find the optimal k for k-means clustering.
+
+    Parameters:
+        - data: The features to use
+        - pipeline: The scikit-learn pipeline with KMeans
+        - kmeans_step_name: The name of the step in the pipeline that is KMeans
+        - k_range: The values of `k` to try
+
+    Returns:
+        A matplotlib Axes object
+    """
     scores = []
     for k in k_range:
         pipeline.named_steps[kmeans_step_name].n_clusters = k
         pipeline.fit(data)
         scores.append(pipeline.score(data) * -1)
 
-    fig = plt.figure()
-    plt.plot(k_range, scores, 'bo-')
-    plt.xlabel('k')
-    plt.ylabel('value of data on objective function')
-    plt.suptitle('Elbow Point Plot')
-    plt.close()
+    fig, axes = plt.subplots()
+    axes.plot(k_range, scores, 'bo-')
+    axes.set_xlabel('k')
+    axes.set_ylabel('value of data on objective function')
+    axes.set_title('Elbow Point Plot')
 
-    return fig
+    return axes
 
 def plot_residuals(y_test, preds):
     """
@@ -37,8 +47,14 @@ def plot_residuals(y_test, preds):
     residuals = y_test - preds
 
     fig, axes = plt.subplots(1, 2, figsize=(15, 3))
+
     axes[0].scatter(np.arange(residuals.shape[0]), residuals)
+    axes[0].set_xlabel('Observation')
+    axes[0].set_ylabel('Residual')
+
     residuals.plot(kind='kde', ax=axes[1])
+    axes[1].set_xlabel('Residual')
+
     plt.suptitle('Residuals')
     return axes
 
@@ -73,13 +89,20 @@ def plot_roc(y_test, preds):
         Plotted ROC curve.
     """
     fpr, tpr, thresholds = roc_curve(y_test, preds)
-    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='baseline')
-    plt.plot(fpr, tpr, color='red', lw=2, label='model')
-    plt.legend(loc='lower right')
-    plt.title('ROC curve')
-    plt.xlabel('False Positive Rate (FPR)')
-    plt.ylabel('True Positive Rate (TPR)')
-    plt.annotate(f'AUC: {roc_auc_score(y_test, preds):.2}', xy=(.43, .025))
+
+    fig, axes = plt.subplots()
+
+    axes.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='baseline')
+    axes.plot(fpr, tpr, color='red', lw=2, label='model')
+
+    axes.legend(loc='lower right')
+    axes.set_title('ROC curve')
+    axes.set_xlabel('False Positive Rate (FPR)')
+    axes.set_ylabel('True Positive Rate (TPR)')
+
+    axes.annotate(f'AUC: {roc_auc_score(y_test, preds):.2}', xy=(.43, .025))
+
+    return axes
 
 def confusion_matrix_visual(y_true, y_pred, class_labels, **kwargs):
     """
