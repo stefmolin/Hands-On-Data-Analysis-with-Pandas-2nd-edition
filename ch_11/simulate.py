@@ -2,6 +2,7 @@ import argparse
 import datetime as dt
 import os
 import logging
+import random
 
 import login_attempt_simulator as sim
 
@@ -40,6 +41,9 @@ if __name__ == '__main__':
         help="datetime to start in the form 'YYYY-MM-DD' or 'YYYY-MM-DD-HH'"
     )
     parser.add_argument(
+        "-s", "--seed", type=int, help="set a seed for reproducibility"
+    )
+    parser.add_argument(
         "attack_prob", type=float,
         help="probability of attack in a given hour"
     )
@@ -48,7 +52,7 @@ if __name__ == '__main__':
         help="probability attacker tries to guess credentials for all usernames"
     )
     parser.add_argument(
-        "-s", "--stealthy", action='store_true', help="be stealthy? (vary IP addresses?)"
+        "-st", "--stealthy", action='store_true', help="be stealthy? (vary IP addresses?)"
     )
     parser.add_argument(
         "-m", "--make", action='store_true', help="make userbase"
@@ -72,6 +76,9 @@ if __name__ == '__main__':
         logger.warning('Creating new user base and mapping IP addresses to them.')
 
         user_base_file = get_user_base_file_path(args.userbase, 'user_base.txt')
+
+        # seed the creation of userbase
+        random.seed(args.seed)
 
         # create usernames and write to file
         sim.utils.make_userbase(user_base_file)
@@ -99,7 +106,9 @@ if __name__ == '__main__':
 
     try:
         logger.info(f'Simulating {args.days} days...')
-        simulator = sim.LoginAttemptSimulator(user_ip_mapping_file, start, end)
+        simulator = sim.LoginAttemptSimulator(
+            user_ip_mapping_file, start, end, seed=args.seed
+        )
         simulator.simulate(
             attack_prob=args.attack_prob,
             try_all_users_prob=args.try_all_users_prob,
