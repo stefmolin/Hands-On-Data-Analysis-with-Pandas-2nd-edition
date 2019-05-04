@@ -2,6 +2,7 @@ import argparse
 import datetime as dt
 import os
 import logging
+import random
 
 import login_attempt_simulator as sim
 
@@ -42,6 +43,9 @@ if __name__ == '__main__':
         "-m", "--make", action='store_true', help="make userbase"
     )
     parser.add_argument(
+        "-s", "--seed", type=int, help="set a seed for reproducibility"
+    )
+    parser.add_argument(
         "-u", "--userbase", help="file to write the userbase to"
     )
     parser.add_argument(
@@ -60,6 +64,9 @@ if __name__ == '__main__':
         logger.warning('Creating new user base and mapping IP addresses to them.')
 
         user_base_file = get_user_base_file_path(args.userbase, 'user_base.txt')
+
+        # seed the creation of userbase
+        random.seed(args.seed)
 
         # create usernames and write to file
         sim.utils.make_userbase(user_base_file)
@@ -86,8 +93,10 @@ if __name__ == '__main__':
 
     try:
         logger.info(f'Simulating {args.days} days...')
-        simulator = sim.LoginAttemptSimulator(user_ip_mapping_file, start, end)
-        simulator.simulate(attack_prob=0.05, try_all_users_prob=0.65, vary_ips=False)
+        simulator = sim.LoginAttemptSimulator(
+            user_ip_mapping_file, start, end, seed=args.seed
+        )
+        simulator.simulate(attack_prob=0.05, try_all_users_prob=0.5, vary_ips=False)
 
         # save logs
         logger.info('Saving logs')
