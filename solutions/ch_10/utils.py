@@ -17,7 +17,7 @@ def elbow_point(
     Parameters:
         - data: The features to use
         - pipeline: The scikit-learn pipeline with KMeans
-        - kmeans_step_name: The name of the step in the pipeline that is KMeans
+        - kmeans_step_name: The name of the KMeans step in the pipeline
         - k_range: The values of `k` to try
 
     Returns:

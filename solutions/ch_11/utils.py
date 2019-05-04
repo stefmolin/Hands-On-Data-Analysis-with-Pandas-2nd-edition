@@ -11,21 +11,31 @@ from sklearn.preprocessing import MinMaxScaler
 def elbow_point(
     data, pipeline, kmeans_step_name='kmeans', k_range=range(1, 11)
 ):
-    """Graph the elbow point to find the optimal k for clustering"""
+    """
+    Graph the elbow point to find the optimal k for k-means clustering.
+
+    Parameters:
+        - data: The features to use
+        - pipeline: The scikit-learn pipeline with KMeans
+        - kmeans_step_name: The name of the KMeans step in the pipeline
+        - k_range: The values of `k` to try
+
+    Returns:
+        A matplotlib Axes object
+    """
     scores = []
     for k in k_range:
         pipeline.named_steps[kmeans_step_name].n_clusters = k
         pipeline.fit(data)
         scores.append(pipeline.score(data) * -1)
 
-    fig = plt.figure()
-    plt.plot(k_range, scores, 'bo-')
-    plt.xlabel('k')
-    plt.ylabel('value of data on objective function')
-    plt.suptitle('Elbow Point Plot')
-    plt.close()
+    fig, axes = plt.subplots()
+    axes.plot(k_range, scores, 'bo-')
+    axes.set_xlabel('k')
+    axes.set_ylabel('value of data on objective function')
+    axes.set_title('Elbow Point Plot')
 
-    return fig
+    return axes
 
 def adjusted_r2(model, X, y):
 	"""
@@ -59,8 +69,14 @@ def plot_residuals(y_test, preds):
     residuals = y_test - preds
 
     fig, axes = plt.subplots(1, 2, figsize=(15, 3))
+
     axes[0].scatter(np.arange(residuals.shape[0]), residuals)
+    axes[0].set_xlabel('Observation')
+    axes[0].set_ylabel('Residual')
+
     residuals.plot(kind='kde', ax=axes[1])
+    axes[1].set_xlabel('Residual')
+
     plt.suptitle('Residuals')
     return axes
 
@@ -133,6 +149,7 @@ def plot_roc(y_test, preds, ax=None):
     ax.set_xlabel('False Positive Rate (FPR)')
     ax.set_ylabel('True Positive Rate (TPR)')
     ax.annotate(f'AUC: {roc_auc_score(y_test, preds):.2}', xy=(.43, .025))
+    return ax
 
 def plot_multi_class_roc(y_test, preds, ax=None):
     """
@@ -160,6 +177,7 @@ def plot_multi_class_roc(y_test, preds, ax=None):
     ax.set_title('Multi-class ROC curve')
     ax.set_xlabel('False Positive Rate (FPR)')
     ax.set_ylabel('True Positive Rate (TPR)')
+    return ax
 
 def pca_scatter(X, labels, cbar_label, color_map='brg'):
     """
