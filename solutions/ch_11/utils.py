@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from sklearn.decomposition import PCA
-from sklearn.metrics import r2_score, roc_curve, roc_auc_score, confusion_matrix
+from sklearn.metrics import auc, average_precision_score, confusion_matrix, precision_recall_curve, r2_score, roc_curve
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 
@@ -12,7 +12,7 @@ def elbow_point(
     data, pipeline, kmeans_step_name='kmeans', k_range=range(1, 11)
 ):
     """
-    Graph the elbow point to find the optimal k for k-means clustering.
+    Graph the elbow point to find an appropriate k for k-means clustering.
 
     Parameters:
         - data: The features to use
@@ -32,7 +32,7 @@ def elbow_point(
     fig, axes = plt.subplots()
     axes.plot(k_range, scores, 'bo-')
     axes.set_xlabel('k')
-    axes.set_ylabel('value of data on objective function')
+    axes.set_ylabel('inertias')
     axes.set_title('Elbow Point Plot')
 
     return axes
@@ -131,7 +131,7 @@ def plot_roc(y_test, preds, ax=None):
     """
     Plot ROC curve to evaluate classification.
 
-    Parameters: 
+    Parameters:
         - y_test: The true values for y
         - preds: The predicted values for y as probabilities
         - ax: The Axes to plot on
@@ -148,8 +148,43 @@ def plot_roc(y_test, preds, ax=None):
     ax.set_title('ROC curve')
     ax.set_xlabel('False Positive Rate (FPR)')
     ax.set_ylabel('True Positive Rate (TPR)')
-    ax.annotate(f'AUC: {roc_auc_score(y_test, preds):.2}', xy=(.43, .025))
+    ax.annotate(f'AUC: {auc(fpr, tpr):.2}', xy=(.43, .025))
     return ax
+
+def plot_pr_curve(y_test, preds, positive_class=1):
+    """
+    Plot precision-recall curve to evaluate classification.
+
+    Parameters:
+        - y_test: The true values for y
+        - preds: The predicted values for y as probabilities
+        - positive_class: The label for the positive class in the data
+
+    Returns:
+        Plotted precision-recall curve.
+    """
+    precision, recall, thresholds = precision_recall_curve(y_test, preds)
+
+    fig, axes = plt.subplots()
+
+    axes.axhline(sum(y_test == positive_class)/len(y_test), color='navy', lw=2, linestyle='--', label='baseline')
+    axes.plot(recall, precision, color='red', lw=2, label='model')
+
+    axes.legend()
+    axes.set_title(
+        'Precision-recall curve\n'
+        f""" AP: {average_precision_score(
+            y_test, preds, pos_label=positive_class
+        ):.2} | """
+        f'AUC: {auc(recall, precision):.2}'
+    )
+    axes.set_xlabel('Recall')
+    axes.set_ylabel('Precision')
+
+    axes.set_xlim(-0.05, 1.05)
+    axes.set_ylim(-0.05, 1.05)
+
+    return axes
 
 def plot_multi_class_roc(y_test, preds, ax=None):
     """
@@ -178,6 +213,46 @@ def plot_multi_class_roc(y_test, preds, ax=None):
     ax.set_xlabel('False Positive Rate (FPR)')
     ax.set_ylabel('True Positive Rate (TPR)')
     return ax
+
+def plot_multi_class_pr_curve(y_test, preds):
+    """
+    Plot precision-recall curve to evaluate classification.
+
+    Parameters:
+        - y_test: The true values for y
+        - preds: The predicted values for y as probabilities
+
+    Returns:
+        Plotted precision-recall curve.
+    """
+    class_labels = np.sort(y_test.unique())
+
+    row_count = np.ceil(len(class_labels) / 3).astype(int)
+    fig, axes = plt.subplots(row_count, 3, figsize=(15, row_count*5))
+    axes = axes.flatten()
+
+    if len(axes) > len(class_labels):
+        for i in range(len(class_labels), len(axes)):
+            fig.delaxes(axes[i])
+
+    for i, class_label in enumerate(class_labels):
+        axes[i].axhline(sum(y_test == class_label)/len(y_test), color='navy', lw=2, linestyle='--', label='baseline')
+        actuals = np.where(y_test == class_label, 1, 0)
+        predicted_probabilities = preds[:,i]
+        precision, recall, thresholds = precision_recall_curve(actuals, predicted_probabilities)
+        auc_score = auc(recall, precision)
+        ap_score = average_precision_score(actuals, predicted_probabilities)
+        axes[i].plot(recall, precision, lw=2, label=f"""AUC: {auc_score:.2}; AP : {ap_score:.2}""")
+
+        axes[i].legend()
+        axes[i].set_title(f'Precision-recall curve: class {class_label}')
+        axes[i].set_xlabel('Recall')
+        axes[i].set_ylabel('Precision')
+
+        axes[i].set_xlim(-0.05, 1.05)
+        axes[i].set_ylim(-0.05, 1.05)
+
+    return axes
 
 def pca_scatter(X, labels, cbar_label, color_map='brg'):
     """

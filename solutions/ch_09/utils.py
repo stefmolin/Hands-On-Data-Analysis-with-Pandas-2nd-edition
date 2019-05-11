@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from sklearn.metrics import r2_score, roc_curve, roc_auc_score, confusion_matrix
+from sklearn.metrics import auc, average_precision_score, confusion_matrix, precision_recall_curve, r2_score, roc_curve
 
 def elbow_point(
     data, pipeline, kmeans_step_name='kmeans', k_range=range(1, 11)
 ):
     """
-    Graph the elbow point to find the optimal k for k-means clustering.
+    Graph the elbow point to find an appropriate k for k-means clustering.
 
     Parameters:
         - data: The features to use
@@ -27,7 +27,7 @@ def elbow_point(
     fig, axes = plt.subplots()
     axes.plot(k_range, scores, 'bo-')
     axes.set_xlabel('k')
-    axes.set_ylabel('value of data on objective function')
+    axes.set_ylabel('inertia')
     axes.set_title('Elbow Point Plot')
 
     return axes
@@ -36,7 +36,7 @@ def plot_residuals(y_test, preds):
     """
     Plot residuals to evaluate regression.
 
-    Parameters: 
+    Parameters:
         - y_test: The true values for y
         - preds: The predicted values for y
 
@@ -81,7 +81,7 @@ def plot_roc(y_test, preds):
     """
     Plot ROC curve to evaluate classification.
 
-    Parameters: 
+    Parameters:
         - y_test: The true values for y
         - preds: The predicted values for y as probabilities
 
@@ -100,7 +100,42 @@ def plot_roc(y_test, preds):
     axes.set_xlabel('False Positive Rate (FPR)')
     axes.set_ylabel('True Positive Rate (TPR)')
 
-    axes.annotate(f'AUC: {roc_auc_score(y_test, preds):.2}', xy=(.43, .025))
+    axes.annotate(f'AUC: {auc(fpr, tpr):.2}', xy=(.43, .025))
+
+    return axes
+
+def plot_pr_curve(y_test, preds, positive_class=1):
+    """
+    Plot precision-recall curve to evaluate classification.
+
+    Parameters:
+        - y_test: The true values for y
+        - preds: The predicted values for y as probabilities
+        - positive_class: The label for the positive class in the data
+
+    Returns:
+        Plotted precision-recall curve.
+    """
+    precision, recall, thresholds = precision_recall_curve(y_test, preds)
+
+    fig, axes = plt.subplots()
+
+    axes.axhline(sum(y_test == positive_class)/len(y_test), color='navy', lw=2, linestyle='--', label='baseline')
+    axes.plot(recall, precision, color='red', lw=2, label='model')
+
+    axes.legend()
+    axes.set_title(
+        'Precision-recall curve\n'
+        f""" AP: {average_precision_score(
+            y_test, preds, pos_label=positive_class
+        ):.2} | """
+        f'AUC: {auc(recall, precision):.2}'
+    )
+    axes.set_xlabel('Recall')
+    axes.set_ylabel('Precision')
+
+    axes.set_xlim(-0.05, 1.05)
+    axes.set_ylim(-0.05, 1.05)
 
     return axes
 
