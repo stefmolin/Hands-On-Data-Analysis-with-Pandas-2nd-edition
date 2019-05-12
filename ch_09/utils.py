@@ -7,7 +7,7 @@ def elbow_point(
     data, pipeline, kmeans_step_name='kmeans', k_range=range(1, 11)
 ):
     """
-    Graph the elbow point to find an appropriate k for k-means clustering.
+    Plot the elbow point to find an appropriate k for k-means clustering.
 
     Parameters:
         - data: The features to use

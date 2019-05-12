@@ -12,7 +12,7 @@ def elbow_point(
     data, pipeline, kmeans_step_name='kmeans', k_range=range(1, 11)
 ):
     """
-    Graph the elbow point to find an appropriate k for k-means clustering.
+    Plot the elbow point to find an appropriate k for k-means clustering.
 
     Parameters:
         - data: The features to use
@@ -282,7 +282,7 @@ def pca_scatter_3d(X, labels, cbar_label, color_map='brg', elev=10, azim=15):
         - labels: The y values
         - cbar_label: The label for the colorbar
         - color_map: Name of the color_map to use. Default is 'brg'
-        - elev: The degrees of elevation to view the graph from. Default is 10.
+        - elev: The degrees of elevation to view the plot from. Default is 10.
         - azim: The azimuth angle on the xy plane (rotation around the z-axis). Default is 15.
     
     Returns:
