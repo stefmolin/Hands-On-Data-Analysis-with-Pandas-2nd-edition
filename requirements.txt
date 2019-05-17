@@ -13,4 +13,5 @@ seaborn==0.9.0
 sqlalchemy==1.3.3
 statsmodels==0.9.0
 git+https://github.com/stefmolin/login-attempt-simulator.git@pandas_book
+git+https://github.com/stefmolin/ml-utils.git@pandas_book
 git+https://github.com/stefmolin/stock-analysis.git@pandas_book
