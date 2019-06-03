@@ -168,8 +168,7 @@ def correlation_coefficient_examples():
     y = np.random.normal(size=100)
 
     # make subplots
-    fig, axes = plt.subplots(2, 2, figsize=(10, 10))
-    axes = axes.flatten()
+    fig, axes = plt.subplots(1, 4, figsize=(16, 3))
     
     # no correlation
     axes[0].scatter(x, y)
@@ -237,7 +236,7 @@ def effect_of_std_dev():
         'σ = 2': np.random.normal(scale=2, size=1000)
     })
 
-    ax = data.plot(kind='density', title='Different Population Standard Deviations')
+    ax = data.plot(kind='density', title='Different Population Standard Deviations', figsize=(8, 3))
     plt.xlabel('x')
 
     return ax
@@ -411,7 +410,7 @@ def hist_and_kde():
 def non_linear_relationships():
     """Plot logarithmic and exponential data along with correlation coefficients."""
     # make subplots
-    fig, axes = plt.subplots(1, 2, figsize=(15, 3))
+    fig, axes = plt.subplots(1, 2, figsize=(12, 3))
 
     # plot logarithmic
     log_x = np.linspace(0.01, 10)
