@@ -18,11 +18,7 @@ def reg_resid_plots(data):
     num_cols = data.shape[1]
     permutation_count = num_cols * (num_cols - 1)
 
-    fig, ax = plt.subplots(
-        permutation_count, 
-        2, 
-        figsize=(15, 8)
-    )
+    fig, ax = plt.subplots(permutation_count, 2, figsize=(15, 8))
 
     for (x, y), axes, color in zip(
         itertools.permutations(data.columns, 2), 
@@ -30,12 +26,6 @@ def reg_resid_plots(data):
         itertools.cycle(['royalblue', 'darkorange'])
     ):
         for subplot, func in zip(axes, (sns.regplot, sns.residplot)):
-            func(
-                x=x, 
-                y=y,
-                data=data,
-                ax=subplot,
-                color=color
-            )
+            func(x=x, y=y, data=data, ax=subplot, color=color)
     plt.close()
     return fig
