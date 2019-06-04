@@ -236,7 +236,7 @@ def effect_of_std_dev():
         'σ = 2': np.random.normal(scale=2, size=1000)
     })
 
-    ax = data.plot(kind='density', title='Different Population Standard Deviations', figsize=(8, 3))
+    ax = data.plot(kind='density', title='Different Population Standard Deviations', figsize=(5, 2))
     plt.xlabel('x')
 
     return ax
