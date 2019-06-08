@@ -4,24 +4,24 @@
 This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas), published by Packt on June 28, 2019.
 
 ## Book Description
-Data analysis has become a necessary skill in a variety of positions where knowing how to work with data and extract insights can generate great value.
+Data analysis has become a necessary skill in a variety of positions where knowing how to work with data and extract insights can generate significant value.
 
-This book will show you how to analyze your data and get started with machine learning in Python, using the powerful pandas library. We will extend pandas offerings with other Python libraries, such as matplotlib, NumPy, and scikit-learn to perform each phase and operation of data analysis tasks. You will learn data wrangling, how to manipulate your data, clean it, visualize it, find patterns, and make predictions based on past data, using real-world examples. You will learn how to conduct data analysis, and then take your analyses a step further as we explore some applications of anomaly detection, regression, clustering, and classification.
+*Hands-On Data Analysis with Pandas* will show you how to analyze your data, get started with machine learning, and work effectively with Python libraries often used for data science, such as pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn. Using real-world datasets, you will learn how to use the powerful pandas library to perform data wrangling to reshape, clean, and aggregate your data. Then, you will learn how to conduct exploratory data analysis by calculating summary statistics and visualizing the data to find patterns. In the concluding chapters, you will explore some applications of anomaly detection, regression, clustering, and classification, using scikit-learn, to make predictions based on past data.
 
-Towards the end of the book, you will be able to use pandas to ensure the veracity of your data, visualize it for effective decision-making, and reliably reproduce analyses across multiple datasets.
+By the end of this book, you will be equipped with the skills you need to use pandas to ensure the veracity of your data, visualize it for effective decision-making, and reliably reproduce analyses across multiple datasets.
 
 ## What You Will Learn
-- Understand how data analysts and scientists think about gathering and understanding data
+- Understand how data analysts and scientists gather and analyze data
 - Perform data analysis and data wrangling in Python
 - Combine, group, and aggregate data from multiple sources
 - Create data visualizations with `pandas`, `matplotlib`, and `seaborn`
-- Learn how to apply machine learning algorithms with `sklearn` to make predictions and look for patterns.
+- Apply machine learning algorithms with `sklearn` to identify patterns and make predictions
 - Use Python data science libraries to analyze real-world datasets.
 - Use `pandas` to solve several common data representation and analysis problems
-- Learn how to collect data from APIs
+- Collect data from APIs
+- Build Python scripts, modules, and packages for reusable analysis code.
 - Utilize computer science concepts and algorithms to write more efficient code for data analysis
-- Learn how to build your own Python scripts, modules, and packages
-- Build and run simulations
+- Write and run simulations
 
 ## Table of Contents
 - [Chapter 1, *Introduction to Data Analysis*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_01), will teach you the fundamentals of data analysis, give you a foundation in statistics, and get your environment set up for working with data in Python and using Jupyter Notebooks.
