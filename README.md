@@ -47,7 +47,7 @@ By the end of this book, you will be equipped with the skills you need to use pa
 
 - [Chapter 10, *Making Better Predictions: Optimizing ML Models*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_10), shows you strategies for improving the performance of your machine learning models.
 
-- [Chapter 11, *ML Anomaly Detection: Catching Hackers, Part 2*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_11), revisits anomaly detection on login attempt data, using machine learning techniques.
+- [Chapter 11, *ML Anomaly Detection: Catching Hackers, Part 2*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_11), revisits anomaly detection on login attempt data, using machine learning techniques, all while giving you a taste of how the workflow looks in practice.
 
 - [Chapter 12, *The Road Ahead*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_12), contains resources for taking your skills to the next level and further avenues for exploration.
 
