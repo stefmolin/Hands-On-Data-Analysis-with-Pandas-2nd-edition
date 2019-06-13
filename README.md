@@ -3,6 +3,8 @@
 
 This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas), published by Packt on June 28, 2019.
 
+Purchase the book: [Amazon](https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1789615321) | [Barnes & Noble](https://www.barnesandnoble.com/w/hands-on-data-analysis-with-pandas-stefanie-molin/1130823468) | [Packt](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas)
+
 ## Book Description
 Data analysis has become a necessary skill in a variety of positions where knowing how to work with data and extract insights can generate significant value.
 
@@ -11,6 +13,7 @@ Data analysis has become a necessary skill in a variety of positions where knowi
 By the end of this book, you will be equipped with the skills you need to use pandas to ensure the veracity of your data, visualize it for effective decision-making, and reliably reproduce analyses across multiple datasets.
 
 ## What You Will Learn
+*Prerequisite: Basic knowledge of Python or past experience with another language (R, SAS, MATLAB, etc.).*
 - Understand how data analysts and scientists gather and analyze data
 - Perform data analysis and data wrangling in Python
 - Combine, group, and aggregate data from multiple sources
@@ -26,7 +29,7 @@ By the end of this book, you will be equipped with the skills you need to use pa
 ## Table of Contents
 - [Chapter 1, *Introduction to Data Analysis*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_01), will teach you the fundamentals of data analysis, give you a foundation in statistics, and get your environment set up for working with data in Python and using Jupyter Notebooks.
 
-- [Chapter 2, *Working with Pandas DataFrames*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_02), introduces you to the `pandas` library and shows you the basics of working with DataFrames.
+- [Chapter 2, *Working with Pandas DataFrames*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_02), introduces you to the `pandas` library and shows you the basics of working with `DataFrames`.
 
 - [Chapter 3, *Data Wrangling with Pandas*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_03), discusses the process of data manipulation, shows you how to explore an API to gather data, and guides you through data cleaning and reshaping with pandas.
 
@@ -46,9 +49,12 @@ By the end of this book, you will be equipped with the skills you need to use pa
 
 - [Chapter 11, *ML Anomaly Detection: Catching Hackers, Part 2*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_11), revisits anomaly detection on login attempt data, using machine learning techniques.
 
-- Chapter 12, *The Road Ahead*, contains resources for taking your skills to the next level and further avenues for exploration. (Available in the book.)
+- [Chapter 12, *The Road Ahead*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_12), contains resources for taking your skills to the next level and further avenues for exploration.
+
+## Notes on Environment Setup
+Environment setup instructions are in the chapter 1 of the text. If you don't have the book, you must install Python 3.6 or higher, [set up a virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment), [activate it](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment), and then [install the packages listed in requirements.txt](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#using-requirements-files). You can then launch JupyterLab and use the ch_01/checking_your_setup.ipynb Jupyter notebook to check your setup. Consult [this resource](https://anbasile.github.io/programming/2017/06/25/jupyter-venv/) if you have issues with using your virtual environment in Jupyter.
 
 ## About the Author
-Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a Data Scientist and Software Engineer at Bloomberg LP in NYC (and hacker in training) tackling tough problems in Information Security particularly revolving around anomaly detection, building tools for gathering data, and knowledge sharing. She has extensive experience in data science, designing anomaly detection solutions, and machine learning in both R and Python in the AdTech and FinTech industries. She holds a B.S. in Operations Research from Columbia University’s engineering school with minors in Economics and Entrepreneurship and Innovation.
+Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a data scientist and software engineer at Bloomberg L.P. in NYC (and hacker in training) tackling tough problems in Information Security particularly revolving around anomaly detection, building tools for gathering data, and knowledge sharing. She has extensive experience in data science, designing anomaly detection solutions, and machine learning in both R and Python in the AdTech and FinTech industries. She holds a B.S. in Operations Research from Columbia University’s engineering school with minors in Economics and Entrepreneurship and Innovation.
 
 In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken both among people and computers.
