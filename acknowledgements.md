@@ -8,7 +8,7 @@ To my friend and reviewer, **Aliki Mavromoustaki**: It's rare to meet someone ov
 
 To **Felipe Moreno**: for being an extremely supportive manager and my toughest critic. You managed to fit more writing into the margins of each page than I would have thought possible. While this led to rewriting large portions of the earlier chapters for the final drafts, I know it made a huge difference in the quality of the final outcome. Obrigada!
 
-To **Suphannee Sivakorn**: for volunteering to review the drafts. I know you thought I wouldn't make it past chapter 5, but you didn't really know me then...ขอบคุณค่ะ (ka ka ka) for all the drawings (and occasional poem). They made me smile when I really needed it and kept me sane. Now, I have a poem for you:
+To **Suphannee Sivakorn**: for volunteering to review the drafts. I know you thought I wouldn't make it past chapter 5, but you didn't really know me then...ขอบคุณค่ะ (ka ka ka 🕊️) for all the drawings (and occasional poem). They made me smile when I really needed it and kept me sane. Now, I have a poem for you:
 
 <p align='center'>
     <em>
