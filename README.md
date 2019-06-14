@@ -58,3 +58,6 @@ Environment setup instructions are in the chapter 1 of the text. If you don't ha
 Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a data scientist and software engineer at Bloomberg L.P. in NYC (and hacker in training) tackling tough problems in Information Security particularly revolving around anomaly detection, building tools for gathering data, and knowledge sharing. She has extensive experience in data science, designing anomaly detection solutions, and machine learning in both R and Python in the AdTech and FinTech industries. She holds a B.S. in Operations Research from Columbia University’s engineering school with minors in Economics and Entrepreneurship and Innovation.
 
 In her free time, she enjoys traveling the world, inventing new recipes, and learning new languages spoken both among people and computers.
+
+## Acknowledgements
+Since the book limited the acknowledgements to 450 characters, the full version is [here](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/blob/master/acknowledgements.md).
