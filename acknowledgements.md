@@ -21,7 +21,7 @@ To **Suphannee Sivakorn**: for volunteering to review the drafts. I know you tho
 
 Get ready to be a famous artist:
 
-<img src=".img/pandas_drawing.png?raw=true" align="center" width="600" alt="artist rendetion of the book">
+<img src="_img/pandas_drawing.png?raw=true" align="center" width="600" alt="artist rendition of the book">
 
 To my colleagues. **Lucy Hao** and **Javon Thompson**: for reviewing the financial analysis code and chapter 7. **Alexander Comerford**: for additional resources in chapter 12.
 
