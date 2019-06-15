@@ -5,6 +5,8 @@ This is the code repository for my book [Hands-On Data Analysis with Pandas](htt
 
 Purchase the book: [Amazon](https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1789615321) | [Barnes & Noble](https://www.barnesandnoble.com/w/hands-on-data-analysis-with-pandas-stefanie-molin/1130823468) | [Packt](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas)
 
+*The [1st_edition tag](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/1st_edition) contains all materials as they were at time of publishing the first edition.*
+
 ## Book Description
 Data analysis has become a necessary skill in a variety of positions where knowing how to work with data and extract insights can generate significant value.
 
