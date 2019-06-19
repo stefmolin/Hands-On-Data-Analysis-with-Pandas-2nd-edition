@@ -8,11 +8,11 @@ Purchase the book: [Amazon](https://www.amazon.com/Hands-Data-Analysis-Pandas-vi
 *The [1st_edition tag](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/1st_edition) contains all materials as they were at time of publishing the first edition.*
 
 ## Book Description
-Data analysis has become a necessary skill in a variety of positions where knowing how to work with data and extract insights can generate significant value.
+Data analysis has become an essential skill in a variety of domains where knowing how to work with data and extract insights can generate significant value.
 
-*Hands-On Data Analysis with Pandas* will show you how to analyze your data, get started with machine learning, and work effectively with Python libraries often used for data science, such as pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn. Using real-world datasets, you will learn how to use the powerful pandas library to perform data wrangling to reshape, clean, and aggregate your data. Then, you will learn how to conduct exploratory data analysis by calculating summary statistics and visualizing the data to find patterns. In the concluding chapters, you will explore some applications of anomaly detection, regression, clustering, and classification, using scikit-learn, to make predictions based on past data.
+*Hands-On Data Analysis with Pandas* will show you how to analyze your data, get started with machine learning, and work effectively with Python libraries often used for data science, such as pandas, NumPy, matplotlib, seaborn, and scikit-learn. Using real-world datasets, you will learn how to use the powerful pandas library to perform data wrangling to reshape, clean, and aggregate your data. Then, you will learn how to conduct exploratory data analysis by calculating summary statistics and visualizing the data to find patterns. In the concluding chapters, you will explore some applications of anomaly detection, regression, clustering, and classification, using scikit-learn, to make predictions based on past data.
 
-By the end of this book, you will be equipped with the skills you need to use pandas to ensure the veracity of your data, visualize it for effective decision-making, and reliably reproduce analyses across multiple datasets.
+By the end of this book, you will be equipped with the skills you need to use pandas to ensure the veracity of your data, visualize it for effective decision-making, and reliably reproduce analysis across multiple domains.
 
 ## What You Will Learn
 *Prerequisite: Basic knowledge of Python or past experience with another language (R, SAS, MATLAB, etc.).*
