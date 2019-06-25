@@ -250,7 +250,7 @@ def example_boxplot():
     iqr = q3_y - q1_y
 
     # make the boxplot
-    ax = non_symmetric.plot(kind='box', figsize=(6, 6), title='Boxplot')
+    ax = non_symmetric.plot(kind='box', figsize=(6, 6), title='Box plot')
 
     # label the box
     ax.annotate('median', xy=(0.945, median_y + 2))
