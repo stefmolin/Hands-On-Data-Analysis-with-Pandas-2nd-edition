@@ -1,7 +1,7 @@
 # Hands-On Data Analysis with Pandas
 <a href="https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas">  <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B12311_MockupCover.png" alt="Hands-On Data Analysis with Pandas" height="256px" align="right"></a>
 
-This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas), published by Packt on July 2019.
+This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas), published by Packt on July 24, 2019.
 
 Purchase the book: [Amazon](https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1789615321) | [Barnes & Noble](https://www.barnesandnoble.com/w/hands-on-data-analysis-with-pandas-stefanie-molin/1130823468) | [Packt](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas)
 
@@ -43,13 +43,13 @@ By the end of this book, you will be equipped with the skills you need to use pa
 
 - [Chapter 7, *Financial Analysis: Bitcoin and the Stock Market*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_07), walks you through the creation of a [Python package for analyzing stocks](https://github.com/stefmolin/stock-analysis), building upon everything learned in chapters 1-6 and applying it to a financial application.
 
-- [Chapter 8, *Rule-Based Anomaly Detection: Catching Hackers*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_08), covers [simulating data](https://github.com/stefmolin/login-attempt-simulator) and applying everything learned in chapters 1-6 to catching hackers attempting to authenticate to a website, using rule-based strategies for anomaly detection.
+- [Chapter 8, *Rule-Based Anomaly Detection*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_08), covers [simulating data](https://github.com/stefmolin/login-attempt-simulator) and applying everything learned in chapters 1-6 to catching hackers attempting to authenticate to a website, using rule-based strategies for anomaly detection.
 
 - [Chapter 9, *Getting Started with Machine Learning in Python*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_09), introduces you to machine learning and building models using the `sklearn` library.
 
-- [Chapter 10, *Making Better Predictions: Optimizing ML Models*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_10), shows you strategies for improving the performance of your machine learning models.
+- [Chapter 10, *Making Better Predictions: Optimizing Models*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_10), shows you strategies for improving the performance of your machine learning models.
 
-- [Chapter 11, *ML Anomaly Detection: Catching Hackers, Part 2*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_11), revisits anomaly detection on login attempt data, using machine learning techniques, all while giving you a taste of how the workflow looks in practice.
+- [Chapter 11, *Machine Learning Anomaly Detection*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_11), revisits anomaly detection on login attempt data, using machine learning techniques, all while giving you a taste of how the workflow looks in practice.
 
 - [Chapter 12, *The Road Ahead*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_12), contains resources for taking your skills to the next level and further avenues for exploration.
 
