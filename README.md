@@ -1,7 +1,7 @@
 # Hands-On Data Analysis with Pandas
 <a href="https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas">  <img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B12311_MockupCover.png" alt="Hands-On Data Analysis with Pandas" height="256px" align="right"></a>
 
-This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas), published by Packt on July 24, 2019.
+This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas), published by Packt on July 26, 2019.
 
 Purchase the book: [Amazon](https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1789615321) | [Barnes & Noble](https://www.barnesandnoble.com/w/hands-on-data-analysis-with-pandas-stefanie-molin/1130823468) | [Packt](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas)
 
