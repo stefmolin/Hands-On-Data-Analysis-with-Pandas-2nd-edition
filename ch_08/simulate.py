@@ -85,9 +85,9 @@ if __name__ == '__main__':
     except ValueError:
         logger.warning(
             f'Could not interpret {args.start_date}, '
-            'using January 1, 2019 at 12AM as start instead'
+            'using January 1, 2020 at 12AM as start instead'
         )
-        start = dt.datetime(2019, 1, 1)
+        start = dt.datetime(2020, 1, 1)
 
     end = start + dt.timedelta(days=args.days)
 
@@ -96,7 +96,7 @@ if __name__ == '__main__':
         simulator = sim.LoginAttemptSimulator(
             user_ip_mapping_file, start, end, seed=args.seed
         )
-        simulator.simulate(attack_prob=0.05, try_all_users_prob=0.5, vary_ips=False)
+        simulator.simulate(attack_prob=0.1, try_all_users_prob=0.2, vary_ips=False)
 
         # save logs
         logger.info('Saving logs')
