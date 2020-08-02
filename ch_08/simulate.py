@@ -40,13 +40,13 @@ if __name__ == '__main__':
         help="datetime to start in the form 'YYYY-MM-DD' or 'YYYY-MM-DD-HH'"
     )
     parser.add_argument(
-        "-m", "--make", action='store_true', help="make userbase"
+        "-m", "--make", action='store_true', help="make user base"
     )
     parser.add_argument(
         "-s", "--seed", type=int, help="set a seed for reproducibility"
     )
     parser.add_argument(
-        "-u", "--userbase", help="file to write the userbase to"
+        "-u", "--userbase", help="file to write the user base to"
     )
     parser.add_argument(
         "-i", "--ip", help="file to write the user-ip address map to"
@@ -65,11 +65,11 @@ if __name__ == '__main__':
 
         user_base_file = get_user_base_file_path(args.userbase, 'user_base.txt')
 
-        # seed the creation of userbase
+        # seed the creation of user base
         random.seed(args.seed)
 
         # create usernames and write to file
-        sim.utils.make_userbase(user_base_file)
+        sim.utils.make_user_base(user_base_file)
 
         # create one or more IP addresses per user and save mapping to file
         valid_users = sim.utils.get_valid_users(user_base_file)
