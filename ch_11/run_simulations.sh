@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 LOGS="logs"
 
@@ -42,13 +42,13 @@ printf '\nSimulating November 2018...\n'
 python simulate.py -s 11 --stealthy -l "$LOGS"/nov_2018.csv -hl "$LOGS"/hackers_nov_2018.csv 30 "2018-11-01" 0.007 0.17
 
 printf '\nSimulating December 2018...\n'
-python simulate.py -s 12 --stealthy -l "$LOGS"/dec_2018.csv -hl "$LOGS"/hackers_dec_2018.csv 31 "2018-12-01" 0.08 0.88
+python simulate.py -s 12 --stealthy -l "$LOGS"/dec_2018.csv -hl "$LOGS"/hackers_dec_2018.csv 31 "2018-12-01" 0.01 0.88
 
 printf '\nSimulating January 2019...\n'
 python simulate.py -s 13 --stealthy -l "$LOGS"/jan_2019.csv -hl "$LOGS"/hackers_jan_2019.csv 31 "2019-01-01" 0.008 0.08
 
 printf '\nSimulating February 2019...\n'
-python simulate.py -s 14 --stealthy -l "$LOGS"/feb_2019.csv -hl "$LOGS"/hackers_feb_2019.csv 28 "2019-02-01" 0.01 0.18
+python simulate.py -s 14 --stealthy -l "$LOGS"/feb_2019.csv -hl "$LOGS"/hackers_feb_2019.csv 28 "2019-02-01" 0.002 0.18
 
 printf '\nSimulating March 2019...\n'
 python simulate.py -s 15 --stealthy -l "$LOGS"/mar_2019.csv -hl "$LOGS"/hackers_mar_2019.csv 31 "2019-03-01" 0.01 0.18
