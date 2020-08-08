@@ -1,4 +1,4 @@
-"""Utility function to see how an image will look in grayscale"""
+"""Utility functions for creating visual aids."""
 
 from PIL import Image
 
