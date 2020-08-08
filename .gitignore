@@ -1,4 +1,4 @@
 .ipynb_checkpoints
 __pycache__/
 *images/
-*.egg-info/*
+*egg-info
