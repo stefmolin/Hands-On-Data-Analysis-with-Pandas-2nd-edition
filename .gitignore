@@ -2,3 +2,5 @@
 __pycache__/
 *images/
 *egg-info
+*.png
+*.dot
