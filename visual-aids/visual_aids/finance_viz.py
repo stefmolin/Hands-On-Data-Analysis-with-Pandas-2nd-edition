@@ -10,7 +10,7 @@ import stock_analysis
 
 
 RED = '#B30000'
-GREEN = '#66E066'
+GREEN = '#5BC95B'
 BLUE = '#00B3B3'
 
 
