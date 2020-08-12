@@ -1,10 +1,14 @@
 """Visual aids for machine learning concepts."""
 
+import pkg_resources
+
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
+from matplotlib.ticker import PercentFormatter
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from sklearn.metrics import auc
 
 
 def confusion_matrix():
@@ -23,6 +27,77 @@ def confusion_matrix():
     ax.set_ylabel('Predicted', fontsize=18)
     ax.set_title('Confusion Matrix', fontsize=25)
 
+    return ax
+
+
+def portion_of_confusion_matrix_considered(metrics):
+    """Show the portion of the confusion matrix considered for a pair of metrics."""
+    if not isinstance(metrics, set):
+        metrics = set(metrics)
+
+    if metrics == {'precision', 'recall'}:
+        data = [
+            ['precision + recall', 'precision'], 
+            ['recall', 'not considered']
+        ]
+    elif metrics == {'sensitivity', 'specificity'}:
+        data = [
+        ['sensitivity', 'specificity'], 
+        ['sensitivity', 'specificity']
+    ]
+    else:
+        raise ValueError(f'Not sure how to deal with metrics "{metrics}"')
+
+    ax = sns.heatmap(
+        np.array([[0.5, 1], [1, 0]]), cbar=False, cmap=ListedColormap(['white', 'lightgray', 'whitesmoke']),
+        annot=np.array(data), fmt='', annot_kws={'size': 12, 'weight': 'bold'}, linewidths=0.3, linecolor='black'
+    )
+    ax.set_xticklabels([True, False])
+    ax.set_xlabel('Actual', fontsize=12)
+    ax.set_yticklabels([True, False], rotation=0)
+    ax.set_ylabel('Predicted', fontsize=12)
+    ax.set_title('Portion of Confusion Matrix Considered', fontsize=16)
+    
+    plt.tight_layout()
+
+    return ax
+
+
+def logistic_sigmoid():
+    """Show the logistic sigmoid plot"""
+    x = np.linspace(-10, 10)
+    y = 1. / (1. + np.exp(-x))
+    fig = plt.plot(x, y)[0].figure
+    plt.title('Logistic Sigmoid Function')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    return fig.axes
+
+
+def roc_curve():
+    """Show example ROC curves."""
+    data = pd.read_csv(pkg_resources.resource_stream(__name__, 'data/sample_roc_curves.csv'))
+
+    ax = sns.lineplot(
+        data=data, hue='label', x='x', y='y', palette='Greens'
+    )
+
+    ax.plot([0, 1], [0, 1], 'k--', alpha=0.3)
+
+    # formatting 
+    ax.set_title('Sample ROC Curves')
+    ax.set_xlabel('False Positive Rate (FPR)')
+    ax.set_ylabel('True Positive Rate (TPR)')
+
+    handles, labels = ax.get_legend_handles_labels()
+    for i, label in enumerate(labels[1:]):
+        curve_data = data.query(f'label == "{label}"')
+        labels[1 + i] = f'{label}; AUC is {auc(curve_data.x, curve_data.y):.2}'
+    ax.legend(handles=handles[1:], labels=labels[1:])
+
+    ax.xaxis.set_major_formatter(PercentFormatter(xmax=1))
+    ax.yaxis.set_major_formatter(PercentFormatter(xmax=1))
+    
     return ax
 
 
