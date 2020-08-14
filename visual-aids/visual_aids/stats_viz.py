@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import bernoulli, binom, expon, poisson, norm, skewnorm
 import seaborn as sns
+from sklearn.metrics import r2_score
 from statsmodels.distributions.empirical_distribution import ECDF
 from statsmodels.tsa.seasonal import seasonal_decompose
 
@@ -17,7 +18,7 @@ def _non_symmetric_data():
         np.random.gamma(7, 5, size=1000) * np.random.choice([-2.2, -1.85, 0, -0.4, 1.33], size=1000), name='x'
     )
 
-def anscombes_quartet():
+def anscombes_quartet(r_squared=False):
     """Plot Anscombe's Quartet along with summary statistics."""
 
     # get data
@@ -51,15 +52,28 @@ def anscombes_quartet():
         ax.plot(reg_x, reg_y, 'r--')
 
         # annotate the summary statistics
-        ax.annotate(
-            f"""ρ = {np.corrcoef(x,y)[0][1]:.2}\ny = {m:.2}x + {b:.2}\n\n{
-                r'$μ_x$'
-            } = {np.mean(x):2} | {
-                r'$σ_x$'
-            } = {np.std(x):.2}\n{
-                r'$μ_y$'
-            } = {np.mean(y):.2} | {r'$σ_y$'} = {np.std(y):.2}""", xy=(13, 2.5)
-        )
+        if r_squared:
+            ax.annotate(
+                f"""ρ = {np.corrcoef(x,y)[0][1]:.2}\ny = {m:.2}x + {b:.2}\n\n{
+                    r'$R^2$'
+                } = {r2_score(y, [m*num + b for num in x]):.2}\n\n{
+                    r'$μ_x$'
+                } = {np.mean(x):2} | {
+                    r'$σ_x$'
+                } = {np.std(x):.2}\n{
+                    r'$μ_y$'
+                } = {np.mean(y):.2} | {r'$σ_y$'} = {np.std(y):.2}""", xy=(13, 2.5)
+            )
+        else:
+            ax.annotate(
+                f"""ρ = {np.corrcoef(x,y)[0][1]:.2}\ny = {m:.2}x + {b:.2}\n\n{
+                    r'$μ_x$'
+                } = {np.mean(x):2} | {
+                    r'$σ_x$'
+                } = {np.std(x):.2}\n{
+                    r'$μ_y$'
+                } = {np.mean(y):.2} | {r'$σ_y$'} = {np.std(y):.2}""", xy=(13, 2.5)
+            )
 
     # give the plots a title
     plt.suptitle("Anscombe's Quartet", fontsize=16, y=0.95)
