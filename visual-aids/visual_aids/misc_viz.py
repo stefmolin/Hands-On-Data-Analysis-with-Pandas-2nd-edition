@@ -39,7 +39,7 @@ def elliptical_orbit():
 
     # formatting
     plt.xlim(-1.25, 1.25)
-    plt.ylim(-1.25, 1.25)
+    plt.ylim(-0.75, 1.25)
     plt.legend()
 
     # remove axes
