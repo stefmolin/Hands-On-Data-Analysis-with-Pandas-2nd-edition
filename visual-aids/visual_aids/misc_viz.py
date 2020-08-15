@@ -1,7 +1,13 @@
 """Miscellaneous visual aids"""
 
+import pkg_resources
+
 import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
+import numpy as np
+import pandas as pd
+import seaborn as sns
+from sklearn.cluster import KMeans
 
 
 def elliptical_orbit():
@@ -51,3 +57,23 @@ def elliptical_orbit():
         axes.spines[spine].set_visible(False)
 
     return axes
+
+
+def market_segmentation_cluster_example():
+    """Show an example of market segmentation clusters."""
+    df = pd.read_csv(pkg_resources.resource_stream(__name__, 'data/market_segmentation_cluster_example.csv'))
+
+    model = KMeans(3, random_state=2).fit(df)
+    ax = sns.scatterplot(
+        df.products_viewed, 
+        df.products_purchased, 
+        hue=model.labels_, 
+        palette=sns.color_palette('colorblind', n_colors=3)
+    )
+
+    plt.legend(title='group')
+    plt.title('Clustering for Market Segmentation')
+    plt.xlabel('products viewed')
+    plt.ylabel('products purchased')
+
+    return ax
