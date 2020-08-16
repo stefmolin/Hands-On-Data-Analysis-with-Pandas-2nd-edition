@@ -223,3 +223,28 @@ def isolation_forest():
         ax.set_ylim(0, 3)
 
     return axes
+
+def bias_variance_tradeoff():
+    """Create subplots to illustrate the bias-variance tradeoff"""
+    np.random.seed(5)
+    x = np.linspace(start=-1, stop=0.25, num=20)
+    y = x**2 + np.random.uniform(-0.25, 0.25, size=20)
+
+    fig, axes = plt.subplots(1, 3, figsize=(15, 3))
+
+    for ax in axes:
+        ax.plot(x, y, 'bo')
+        ax.set_xlabel('x')
+        ax.set_ylabel('y')
+        ax.set_ylim(-0.4, 1.2)
+
+    axes[0].plot(x, y, 'r-')
+    axes[0].set_title('high variance (overfitting)')
+
+    axes[1].plot(x, x * -1 - 0.1, 'r-')
+    axes[1].set_title('high bias (underfitting)')
+
+    axes[2].plot(x, x**2, 'r-')
+    axes[2].set_title('balance')
+
+    return axes
