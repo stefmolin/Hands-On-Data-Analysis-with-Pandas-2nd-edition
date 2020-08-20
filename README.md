@@ -1,5 +1,5 @@
 # Hands-On Data Analysis with Pandas
-<a href="https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas">  <img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781789615326-original.png" alt="Hands-On Data Analysis with Pandas" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas">  <img src="https://static.packt-cdn.com/products/9781789615326/cover/smaller" alt="Hands-On Data Analysis with Pandas" height="256px" align="right"></a>
 
 This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas), published by Packt on July 26, 2019.
 
