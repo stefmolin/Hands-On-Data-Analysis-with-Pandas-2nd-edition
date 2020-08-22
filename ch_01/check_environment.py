@@ -7,7 +7,7 @@ import re
 OK = '\x1b[42m[ OK ]\x1b[0m'
 FAIL = '\x1b[41m[FAIL]\x1b[0m'
 
-pattern = re.compile(r'(?:\/)([\w*\-*]*)(?:\.git)')
+github_package_pattern = re.compile(r'(?:\/)([\w*\-*]*)(?:\.git)')
 
 def run_checks():
     """Check that the packages we need are installed and the Python version is high enough."""
@@ -22,15 +22,21 @@ def run_checks():
     with open('../requirements.txt', 'r') as file:
         requirements = {}
         for line in file.read().splitlines():
-            try:
-                pkg, version = line.split('==')
-                if pkg == 'imbalanced-learn':
-                    pkg = 'imblearn'
-                elif pkg == 'scikit-learn':
-                    pkg = 'sklearn'
-            except ValueError:
-                pkg = re.search(pattern, line).group(1).replace('-', '_')
+            github_package = re.search(github_package_pattern, line)
+            if github_package:
+                pkg = github_package.group(1).replace('-', '_')
                 version = None
+            else:
+                if line.startswith('./'):
+                    line = line.replace('./', '')
+                try:
+                    pkg, version = line.split('==')
+                except ValueError:
+                    pkg, version = line, None
+                    if pkg == 'imbalanced-learn':
+                        pkg = 'imblearn'
+                    elif pkg == 'scikit-learn':
+                        pkg = 'sklearn'
 
             requirements[pkg.replace('-', '_')] = version
 
@@ -42,6 +48,7 @@ def run_checks():
                 version = mod.__version__
                 if Version(version) != req_version:
                     print(FAIL, '%s version %s is required, but %s installed.' % (pkg, req_version, version))
+                    continue
             print(OK, '%s' % pkg)
         except ImportError:
             print(FAIL, '%s not installed.' % pkg)
