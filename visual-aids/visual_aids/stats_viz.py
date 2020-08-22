@@ -96,7 +96,8 @@ def datasaurus_dozen():
     """
     df = pd.read_csv(pkg_resources.resource_stream(__name__, 'data/DatasaurusDozen.tsv'), sep='\t')
 
-    fig, axes = plt.subplots(1, 3, figsize=(12, 4))
+    fig, axes = plt.subplots(4, 4, figsize=(12, 12))
+    axes = axes.flatten()
     
     for spine in axes[0].spines:
         axes[0].spines[spine].set_visible(False)
@@ -116,21 +117,25 @@ def datasaurus_dozen():
             r'$σ_x$'
         } = {np.std(x):.2f}\n{
             r'$μ_y$'
-        } = {np.mean(y):.2f}\n{r'$σ_y$'} = {np.std(y):.2f}""", x=0.5, y=0.5, fontsize=25, fontfamily='DejaVu Sans Mono'
+        } = {np.mean(y):.2f}\n{r'$σ_y$'} = {np.std(y):.2f}""", x=0.5, y=0.5, fontsize=20, fontfamily='DejaVu Sans Mono'
     )
     for spine in axes[2].spines:
         axes[2].spines[spine].set_visible(False)
     axes[2].xaxis.set_visible(False)
     axes[2].yaxis.set_visible(False)
-    axes[2].set_xlim(0.48, 0.58)
-    axes[2].set_ylim(0.48, 0.58)
+    axes[2].set_xlim(0.49, 0.58)
+    axes[2].set_ylim(0.49, 0.6)
 
-    # plot the other dozen datasets
-    fig, axes = plt.subplots(3, 4, figsize=(12, 8))
+    for spine in axes[3].spines:
+        axes[3].spines[spine].set_visible(False)
+    axes[3].xaxis.set_visible(False)
+    axes[3].yaxis.set_visible(False)
 
-    for (title, data), ax in zip(df.query('dataset != "dino"').groupby('dataset'), axes.flatten()):
+    for (title, data), ax in zip(df.query('dataset != "dino"').groupby('dataset'), axes[4:]):
         data.plot(kind='scatter', x='x', y='y', title=title, ax=ax)
     plt.tight_layout()
+
+    return axes
 
 def cdf_example():
     """Subplots to understand CDF."""
