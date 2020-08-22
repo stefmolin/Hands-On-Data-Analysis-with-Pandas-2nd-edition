@@ -1,6 +1,8 @@
 """Functions for created visual aids for statistics concepts."""
 
 import itertools
+import pkg_resources
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -17,6 +19,11 @@ def _non_symmetric_data():
     return pd.Series(
         np.random.gamma(7, 5, size=1000) * np.random.choice([-2.2, -1.85, 0, -0.4, 1.33], size=1000), name='x'
     )
+
+def _despine(ax):
+    """Remove the top and right spines of a matplotlib Axes object"""
+    for spine in ['top', 'right']:
+        ax.spines[spine].set_visible(False)
 
 def anscombes_quartet(r_squared=False):
     """Plot Anscombe's Quartet along with summary statistics."""
@@ -54,31 +61,76 @@ def anscombes_quartet(r_squared=False):
         # annotate the summary statistics
         if r_squared:
             ax.annotate(
-                f"""ρ = {np.corrcoef(x,y)[0][1]:.2}\ny = {m:.2}x + {b:.2}\n\n{
+                f"""ρ = {np.corrcoef(x,y)[0][1]:.2f}\ny = {m:.2f}x + {b:.2f}\n\n{
                     r'$R^2$'
-                } = {r2_score(y, [m*num + b for num in x]):.2}\n\n{
+                } = {r2_score(y, [m*num + b for num in x]):.2f}\n\n{
                     r'$μ_x$'
-                } = {np.mean(x):2} | {
+                } = {np.mean(x):.2f} | {
                     r'$σ_x$'
-                } = {np.std(x):.2}\n{
+                } = {np.std(x):.2f}\n{
                     r'$μ_y$'
-                } = {np.mean(y):.2} | {r'$σ_y$'} = {np.std(y):.2}""", xy=(13, 2.5)
+                } = {np.mean(y):.2f} | {r'$σ_y$'} = {np.std(y):.2f}""", xy=(13, 2.5)
             )
         else:
             ax.annotate(
-                f"""ρ = {np.corrcoef(x,y)[0][1]:.2}\ny = {m:.2}x + {b:.2}\n\n{
+                f"""ρ = {np.corrcoef(x,y)[0][1]:.2f}\ny = {m:.2f}x + {b:.2f}\n\n{
                     r'$μ_x$'
-                } = {np.mean(x):2} | {
+                } = {np.mean(x):.2f} | {
                     r'$σ_x$'
-                } = {np.std(x):.2}\n{
+                } = {np.std(x):.2f}\n{
                     r'$μ_y$'
-                } = {np.mean(y):.2} | {r'$σ_y$'} = {np.std(y):.2}""", xy=(13, 2.5)
+                } = {np.mean(y):.2f} | {r'$σ_y$'} = {np.std(y):.2f}""", xy=(13, 2.5)
             )
 
     # give the plots a title
     plt.suptitle("Anscombe's Quartet", fontsize=16, y=0.95)
 
     return axes
+
+def datasaurus_dozen():
+    """
+    Show Alberto Cairo's Datasaurus Dozen dataset
+    
+    Original post: http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html
+    See also: https://www.autodeskresearch.com/publications/samestats
+    """
+    df = pd.read_csv(pkg_resources.resource_stream(__name__, 'data/DatasaurusDozen.tsv'), sep='\t')
+
+    fig, axes = plt.subplots(1, 3, figsize=(12, 4))
+    
+    for spine in axes[0].spines:
+        axes[0].spines[spine].set_visible(False)
+    axes[0].xaxis.set_visible(False)
+    axes[0].yaxis.set_visible(False)
+
+    # plot the Datasaurus
+    data = df.query('dataset == "dino"')
+    ax = data.plot(kind='scatter', x='x', y='y', title='dino', ax=axes[1])
+    
+    # calculate the summary statistics
+    x, y = data.x, data.y
+    axes[2].text(
+        s=f"""ρ  = {np.corrcoef(x,y)[0][1]:.2f}\n{
+            r'$μ_x$'
+        } = {np.mean(x):.2f}\n{
+            r'$σ_x$'
+        } = {np.std(x):.2f}\n{
+            r'$μ_y$'
+        } = {np.mean(y):.2f}\n{r'$σ_y$'} = {np.std(y):.2f}""", x=0.5, y=0.5, fontsize=25, fontfamily='DejaVu Sans Mono'
+    )
+    for spine in axes[2].spines:
+        axes[2].spines[spine].set_visible(False)
+    axes[2].xaxis.set_visible(False)
+    axes[2].yaxis.set_visible(False)
+    axes[2].set_xlim(0.48, 0.58)
+    axes[2].set_ylim(0.48, 0.58)
+
+    # plot the other dozen datasets
+    fig, axes = plt.subplots(3, 4, figsize=(12, 8))
+
+    for (title, data), ax in zip(df.query('dataset != "dino"').groupby('dataset'), axes.flatten()):
+        data.plot(kind='scatter', x='x', y='y', title=title, ax=ax)
+    plt.tight_layout()
 
 def cdf_example():
     """Subplots to understand CDF."""
@@ -241,6 +293,7 @@ def different_modal_plots():
         ax.set_xlabel('x')
         ax.set_ylabel('density')
         ax.set_title(title)
+        _despine(ax)
 
     return axes
 
@@ -252,8 +305,9 @@ def effect_of_std_dev():
         'σ = 2': np.random.normal(scale=2, size=1000)
     })
 
-    ax = data.plot(kind='density', title='Different Population Standard Deviations', figsize=(5, 2))
+    ax = data.plot(kind='density', title='Different Population Standard Deviations', figsize=(5, 2), colormap='brg')
     plt.xlabel('x')
+    _despine(ax)
 
     return ax
 
@@ -299,6 +353,10 @@ def example_boxplot():
             arrowprops=dict(facecolor='black', arrowstyle='-|>')
         )
 
+    _despine(ax)
+    ax.set_ylabel('x')
+    ax.xaxis.set_visible(False)
+
     return ax
 
 def example_histogram():
@@ -327,6 +385,7 @@ def example_histogram():
         f'median ({x_median:.0f})', xy=(x_median, 180), xytext=(x_median - 12, 280), arrowprops=dict(arrowstyle='->')
     )
     plt.ylim((0, 320))
+    _despine(ax)
 
     return ax
 
@@ -345,14 +404,16 @@ def example_kde():
     x_mode, x_mean, x_median = non_symmetric.mode(), non_symmetric.mean(), non_symmetric.median()
 
     # mark measures of central tendency with vertical dashed lines
-    ax.axvline(x_mean, ymax=0.2, color='orange', linestyle='dashed')
+    ax.axvline(x_mean, ymax=0.195, color='orange', linestyle='dashed')
     ax.axvline(x_median, ymax=0.5, color='orange', linestyle='dashed')
-    ax.axvline(x_mode.iat[0], ymax=0.87, color='orange', linestyle='dashed')
+    ax.axvline(x_mode.iat[0], ymax=0.868, color='orange', linestyle='dashed')
 
     # annotate measures of central tendency
     ax.annotate('mode', xy=(x_mode - 11, 0.0178))
     ax.annotate('mean', xy=(x_mean, 0.0015), xytext=(x_mean - 70, 0.001), arrowprops=dict(arrowstyle='->'))
     ax.annotate('median', xy=(x_median, 0.01), xytext=(x_median - 50, 0.013), arrowprops=dict(arrowstyle='->'))
+
+    _despine(ax)
 
     return ax
 
@@ -420,6 +481,7 @@ def hist_and_kde():
     # plot histogram and KDE
     ax = data.plot(kind='hist', density=True, bins=12, alpha=0.5, title='Estimating the distribution', figsize=(15, 3))
     data.plot(kind='kde', ax=ax, color='blue').set_xlabel('x')
+    _despine(ax)
 
     return ax
 
@@ -469,17 +531,17 @@ def skew_examples():
 
     # annotate left skew's mode
     ax[0].axvline(-0.42, 0.72, 0.925, color='orange')
-    ax[0].text(s='mode', x=-0.49, y=0.5, rotation=90)
+    ax[0].text(s='mode', x=-0.49, y=0.44, rotation=90)
     ax[0].axvline(-0.42, 0, 0.53, color='orange')
 
     # annotate left skew's median
     ax[0].axvline(median_skew_val * -1, 0.52, 0.83, color='orange')
-    ax[0].text(s='median', x=-0.74, y=0.35, rotation=90)
+    ax[0].text(s='median', x=-0.74, y=0.26, rotation=90)
     ax[0].axvline(median_skew_val * -1, 0, 0.3, color='orange')
 
     # annotate left skew's mean
     ax[0].axvline(mean_skew_val * -1, 0.26, 0.77, color='orange')
-    ax[0].text(s='mean', x=-0.84, y=0.16, rotation=90)
+    ax[0].text(s='mean', x=-0.84, y=0.1, rotation=90)
     ax[0].axvline(mean_skew_val * -1, 0, 0.09, color='orange')
 
     # plot no skew normal
@@ -497,17 +559,17 @@ def skew_examples():
 
     # annotate right skew's mode
     ax[2].axvline(0.42, 0.72, 0.925, color='orange')
-    ax[2].text(s='mode', x=0.35, y=0.5, rotation=90)
+    ax[2].text(s='mode', x=0.35, y=0.44, rotation=90)
     ax[2].axvline(0.42, 0, 0.53, color='orange')
 
     # annotate right skew's median
     ax[2].axvline(median_skew_val, 0.52, 0.83, color='orange')
-    ax[2].text(s='median', x=0.6, y=0.35, rotation=90)
+    ax[2].text(s='median', x=0.6, y=0.26, rotation=90)
     ax[2].axvline(median_skew_val, 0, 0.3, color='orange')
 
     # annotate right skew's mean
     ax[2].axvline(mean_skew_val, 0.26, 0.77, color='orange')
-    ax[2].text(s='mean', x=0.72, y=0.16, rotation=90)
+    ax[2].text(s='mean', x=0.72, y=0.1, rotation=90)
     ax[2].axvline(mean_skew_val, 0, 0.09, color='orange')
 
     # label axes and set y-axis limits
@@ -515,6 +577,7 @@ def skew_examples():
         axes.set_xlabel('x')
         axes.set_ylabel('f(x)')
         axes.set_ylim(0, 0.75)
+        _despine(axes)
 
     return ax
     
@@ -536,7 +599,7 @@ def time_series_decomposition_example():
 
     # plot the result
     plt.rcParams['figure.figsize'] = [10, 6]
-    result = seasonal_decompose(ts.set_index('timestamp').value, freq=50)
+    result = seasonal_decompose(ts.set_index('timestamp').value.rename('Time Series Decomposition'), period=50)
     plot = result.plot()
-    plt.suptitle('Time Series Decomposition', y=1)
     plt.rcdefaults()
+    return plot.axes
