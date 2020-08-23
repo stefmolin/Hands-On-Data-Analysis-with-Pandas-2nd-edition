@@ -89,10 +89,10 @@ def anscombes_quartet(r_squared=False):
 
 def datasaurus_dozen():
     """
-    Show Alberto Cairo's Datasaurus Dozen dataset
+    Show the Datasaurus Dozen dataset
     
-    Original post: http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html
-    See also: https://www.autodeskresearch.com/publications/samestats
+    Original Datasaurus post: http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html
+    Datasaurus Dozen: https://www.autodeskresearch.com/publications/samestats
     """
     df = pd.read_csv(pkg_resources.resource_stream(__name__, 'data/DatasaurusDozen.tsv'), sep='\t')
 
