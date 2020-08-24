@@ -1,11 +1,15 @@
 # Hands-On Data Analysis with Pandas
-<a href="https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas">  <img src="https://static.packt-cdn.com/products/9781789615326/cover/smaller" alt="Hands-On Data Analysis with Pandas" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/product/hands-on-data-analysis-with-pandas/9781789615326">  <img src="_img/cover.PNG" alt="Hands-On Data Analysis with Pandas" height="256px" align="right"></a>
 
-This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas), published by Packt on July 26, 2019.
+This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/product/hands-on-data-analysis-with-pandas/9781789615326), published by Packt on July 26, 2019 (1st edition).
 
-Purchase the book: [Amazon](https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1789615321) | [Barnes & Noble](https://www.barnesandnoble.com/w/hands-on-data-analysis-with-pandas-stefanie-molin/1130823468) | [Packt](https://www.packtpub.com/big-data-and-business-intelligence/hands-data-analysis-pandas)
+Purchase the book: [Amazon](https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1789615321) | [Barnes & Noble](https://www.barnesandnoble.com/w/hands-on-data-analysis-with-pandas-stefanie-molin/1130823468) | [Packt](https://www.packtpub.com/product/hands-on-data-analysis-with-pandas/9781789615326)
 
-*The [1st_edition tag](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/1st_edition) contains all materials as they were at time of publishing the first edition.*
+## Versions
+This repository contains git tags for the materials as they were at time of publishing. Available tags:
+
+- [1st_edition](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/1st_edition)
+- [2nd_edition](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/2nd_edition)
 
 ## Book Description
 Data analysis has become an essential skill in a variety of domains where knowing how to work with data and extract insights can generate significant value.

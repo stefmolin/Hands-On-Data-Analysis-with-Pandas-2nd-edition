@@ -6,7 +6,7 @@ Both `seaborn` and `sklearn` provide built-in sample datasets that you can exper
 ### Searching for Data
 The following are a few places you can search for data on a variety of topics:
 - [DataHub](https://datahub.io/search)
-- [Google Dataset Search](https://toolbox.google.com/datasetsearch)
+- [Google Dataset Search](https://datasetsearch.research.google.com/)
 - [Open data on Amazon Web Services](https://registry.opendata.aws/)
 - [OpenML](https://www.openml.org)
 - [SNAP library of datasets collected by Stanford University](https://snap.stanford.edu/data/index.html)
@@ -17,7 +17,7 @@ The following are a few places you can search for data on a variety of topics:
 - [NOAA Climate data API](https://www.ncdc.noaa.gov/cdo-web/webservices/v2)
 - [NYTimes API](https://developer.nytimes.com/)
 - [Open Weather Map API](https://openweathermap.org/api)
-- [Twitter API](https://developer.twitter.com/en/docs.html)
+- [Twitter API](https://developer.twitter.com/en/docs)
 - [USGS Earthquake API](https://earthquake.usgs.gov/fdsnws/event/1/)
 
 ### Websites by Topic
@@ -25,24 +25,31 @@ This section contains selected data resources across various topics, which can b
 
 #### Finance
 In addition to the `pandas_datareader` and `stock_analysis` packages we discussed in chapter 7, consult the following:
-- [Google finance](https://www.google.com/finance)
-- [NASDAQ historical stock prices](https://www.nasdaq.com/quotes/historical-quotes.aspx)
+- [Google finance](https://google.com/finance)
+- [NASDAQ historical stock prices](https://www.nasdaq.com/market-activity/quotes/historical)
 - [Quandl](https://www.quandl.com)
 - [Yahoo! finance](https://finance.yahoo.com)
 
 #### Government data
 - [European Union open data](http://data.europa.eu/euodp/en/data)
-- [NASA](https://data.nasa.gov/)
+- [NASA](https://nasa.github.io/data-nasa-gov-frontpage/)
 - [NYC data](https://opendata.cityofnewyork.us/data/)
 - [UK government data](https://data.gov.uk/)
 - [UN data](http://data.un.org/)
 - [US census data](https://census.gov/data.html)
-- [US government data](https://www.data.gov/﻿)
+- [US government data](https://www.data.gov/)
 
 #### Health and economy
 - [Gapminder](https://www.gapminder.org/data/)
 - [Health data](https://healthdata.gov/search/type/dataset)
-- [World Health Organization](https://www.who.int/gho/en/)
+- [World Health Organization](https://www.who.int/data/gho)
+
+##### COVID-19 datasets
+- [Coronavirus (Covid-19) Data in the United States (NYTimes)](https://github.com/nytimes/covid-19-data)
+- [COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19)
+- [COVID-19 pandemic (European Centre for Disease Prevention and Control)](https://www.ecdc.europa.eu/en/covid-19-pandemic)
+- [Open COVID-19 Datasets](https://researchdata.wisc.edu/open-covid-19-datasets/)
+
 
 #### Social networks
 For those interested in text-based data or graph data, check out the following resources on social networks:
