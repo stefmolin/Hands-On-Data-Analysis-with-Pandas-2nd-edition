@@ -7,7 +7,7 @@ setup(
     author='Stefanie Molin',
     author_email='24376333+stefmolin@users.noreply.github.com',
     license='MIT',
-    url='https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas',
+    url='https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition',
     packages=['visual_aids'],
     install_requires=[
         'matplotlib>=3.0.2',
