@@ -8,8 +8,8 @@ Purchase the book: [Amazon](https://www.amazon.com/Hands-Data-Analysis-Pandas-vi
 ## Versions
 This repository contains git tags for the materials as they were at time of publishing. Available tags:
 
-- [1st_edition](./1st_edition)
-- [2nd_edition](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/tree/2nd_edition)
+- [1st_edition](../../tree/1st_edition)
+- [2nd_edition](../../tree/2nd_edition)
 
 ## Book Description
 Data analysis has become an essential skill in a variety of domains where knowing how to work with data and extract insights can generate significant value.
