@@ -8,7 +8,7 @@ Purchase the book: [Amazon](https://www.amazon.com/Hands-Data-Analysis-Pandas-vi
 ## Versions
 This repository contains git tags for the materials as they were at time of publishing. Available tags:
 
-- [1st_edition](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/tree/1st_edition)
+- [1st_edition](./1st_edition)
 - [2nd_edition](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/tree/2nd_edition)
 
 ## Book Description
@@ -35,27 +35,27 @@ By the end of this book, you will be equipped with the skills you need to use pa
 ## Table of Contents
 - [Chapter 1, *Introduction to Data Analysis*](./ch_01), will teach you the fundamentals of data analysis, give you a foundation in statistics, and get your environment set up for working with data in Python and using Jupyter Notebooks.
 
-- [Chapter 2, *Working with Pandas DataFrames*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_02), introduces you to the `pandas` library and shows you the basics of working with `DataFrames`.
+- [Chapter 2, *Working with Pandas DataFrames*](./ch_02), introduces you to the `pandas` library and shows you the basics of working with `DataFrames`.
 
-- [Chapter 3, *Data Wrangling with Pandas*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_03), discusses the process of data manipulation, shows you how to explore an API to gather data, and guides you through data cleaning and reshaping with pandas.
+- [Chapter 3, *Data Wrangling with Pandas*](./ch_03), discusses the process of data manipulation, shows you how to explore an API to gather data, and guides you through data cleaning and reshaping with pandas.
 
-- [Chapter 4, *Aggregating Pandas DataFrames*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_04), teaches you how to query and merge DataFrames, perform complex operations on them, including rolling calculations and aggregations, and how to work effectively with time series data.
+- [Chapter 4, *Aggregating Pandas DataFrames*](./ch_04), teaches you how to query and merge DataFrames, perform complex operations on them, including rolling calculations and aggregations, and how to work effectively with time series data.
 
-- [Chapter 5, *Visualizing Data with Pandas and Matplotlib*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_05), shows you how to create your own data visualizations in Python, first using the `matplotlib` library, and then directly from `pandas` objects.
+- [Chapter 5, *Visualizing Data with Pandas and Matplotlib*](./ch_05), shows you how to create your own data visualizations in Python, first using the `matplotlib` library, and then directly from `pandas` objects.
 
-- [Chapter 6, *Plotting with Seaborn and Customization Techniques*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_06), continues the discussion on data visualization by teaching you how to use the `seaborn` library for visualizing your long form data and giving you the tools you need to customize your visualizations, making them presentation-ready.
+- [Chapter 6, *Plotting with Seaborn and Customization Techniques*](./ch_06), continues the discussion on data visualization by teaching you how to use the `seaborn` library for visualizing your long form data and giving you the tools you need to customize your visualizations, making them presentation-ready.
 
-- [Chapter 7, *Financial Analysis: Bitcoin and the Stock Market*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_07), walks you through the creation of a [Python package for analyzing stocks](https://github.com/stefmolin/stock-analysis), building upon everything learned in chapters 1-6 and applying it to a financial application.
+- [Chapter 7, *Financial Analysis: Bitcoin and the Stock Market*](./ch_07), walks you through the creation of a [Python package for analyzing stocks](https://github.com/stefmolin/stock-analysis), building upon everything learned in chapters 1-6 and applying it to a financial application.
 
-- [Chapter 8, *Rule-Based Anomaly Detection*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_08), covers [simulating data](https://github.com/stefmolin/login-attempt-simulator) and applying everything learned in chapters 1-6 to catching hackers attempting to authenticate to a website, using rule-based strategies for anomaly detection.
+- [Chapter 8, *Rule-Based Anomaly Detection*](./ch_08), covers [simulating data](https://github.com/stefmolin/login-attempt-simulator) and applying everything learned in chapters 1-6 to catching hackers attempting to authenticate to a website, using rule-based strategies for anomaly detection.
 
-- [Chapter 9, *Getting Started with Machine Learning in Python*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_09), introduces you to machine learning and building models using the `sklearn` library.
+- [Chapter 9, *Getting Started with Machine Learning in Python*](./ch_09), introduces you to machine learning and building models using the `sklearn` library.
 
-- [Chapter 10, *Making Better Predictions: Optimizing Models*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_10), shows you strategies for improving the performance of your machine learning models.
+- [Chapter 10, *Making Better Predictions: Optimizing Models*](./ch_10), shows you strategies for improving the performance of your machine learning models.
 
-- [Chapter 11, *Machine Learning Anomaly Detection*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_11), revisits anomaly detection on login attempt data, using machine learning techniques, all while giving you a taste of how the workflow looks in practice.
+- [Chapter 11, *Machine Learning Anomaly Detection*](./ch_11), revisits anomaly detection on login attempt data, using machine learning techniques, all while giving you a taste of how the workflow looks in practice.
 
-- [Chapter 12, *The Road Ahead*](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas/tree/master/ch_12), contains resources for taking your skills to the next level and further avenues for exploration.
+- [Chapter 12, *The Road Ahead*](./ch_12), contains resources for taking your skills to the next level and further avenues for exploration.
 
 ## Notes on Environment Setup
 Environment setup instructions are in the chapter 1 of the text. If you don't have the book, you must install Python 3.6 or higher, [set up a virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment), [activate it](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment), and then [install the packages listed in requirements.txt](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#using-requirements-files). You can then launch JupyterLab and use the ch_01/checking_your_setup.ipynb Jupyter notebook to check your setup. Consult [this resource](https://anbasile.github.io/programming/2017/06/25/jupyter-venv/) if you have issues with using your virtual environment in Jupyter.
