@@ -1,6 +1,7 @@
 """Utility functions for creating visual aids."""
 
 from PIL import Image
+import matplotlib.pyplot as plt
 
 
 def make_grayscale(filepath, save=False):
@@ -41,3 +42,7 @@ def edit_image(filepath, replacements, save=False):
         modified_im.save(filepath)
 
     return modified_im
+
+def save_plot(file):
+    """Save the current figure."""
+    plt.savefig(file, bbox_inches='tight')
