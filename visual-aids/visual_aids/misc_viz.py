@@ -65,8 +65,8 @@ def market_segmentation_cluster_example():
 
     model = KMeans(3, random_state=2).fit(df)
     ax = sns.scatterplot(
-        df.products_viewed, 
-        df.products_purchased, 
+        x=df.products_viewed, 
+        y=df.products_purchased, 
         hue=model.labels_, 
         palette=sns.color_palette('colorblind', n_colors=3)
     )
