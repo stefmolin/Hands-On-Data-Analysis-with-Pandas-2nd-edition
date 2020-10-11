@@ -2,7 +2,7 @@ import itertools
 
 def std_from_mean_kde(data):
     """
-    Plot the KDE of the pandas series along with vertical
+    Plot the KDE of the pandas Series along with vertical
     reference lines for each standard deviation from the mean.
     
     Parameters:
@@ -19,9 +19,10 @@ def std_from_mean_kde(data):
     colors = ['green', 'orange', 'red']
     multipliers = [1, 2, 3]
     signs = ['-', '+']
+    linestyles = [':', '-.', '--']
     
-    for sign, (color, multiplier) in itertools.product(
-        signs, zip(colors, multipliers)
+    for sign, (color, multiplier, style) in itertools.product(
+        signs, zip(colors, multipliers, linestyles)
     ):
         adjustment = multiplier * std_mean
         if sign == '-':
@@ -35,7 +36,7 @@ def std_from_mean_kde(data):
         else:
             value = mean_mag + adjustment
             label = None
-        ax.axvline(value, color=color, label=label, alpha=0.5)
+        ax.axvline(value, color=color, linestyle=style, label=label, alpha=0.5)
     
     ax.legend()
     return ax
