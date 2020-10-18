@@ -31,7 +31,7 @@ def hex_to_rgb_color_list(colors):
         
         regex = '.' * (hex_length // 3)
         colors[i] = [
-            int(val * (6 // hex_length), 16)/255
+            int(val * (6 // hex_length), 16) / 255
             for val in re.findall(regex, color)
         ]
     
@@ -77,7 +77,7 @@ def blended_cmap(rgb_color_list):
             offset = 0 if not remainder or seg > 1 else remainder
                 
             updates.append(np.linspace(
-                start=rgb_color_list[seg-1][i], 
+                start=rgb_color_list[seg - 1][i], 
                 stop=rgb_color_list[seg][i], 
                 num=segment_size + offset
             ))
