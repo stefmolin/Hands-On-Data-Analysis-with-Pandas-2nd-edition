@@ -50,6 +50,28 @@ def quartile_bins_viz(data, column, ylabel, title, figsize=(15, 8)):
     return ax
 
 
+def resampling_example():
+    """Shows before and after resampling data at the minute level to the daily level."""
+    np.random.seed(0)
+
+    index = pd.date_range('2018-01-01', freq='T', periods=365*24*60)
+    raw = pd.DataFrame(
+        np.random.uniform(0, 10, size=index.shape[0]), index=index
+    )
+
+    fig, axes = plt.subplots(1, 2, figsize=(15, 5))
+    raw.plot(legend=False, ax=axes[0], title='raw data')
+    raw.resample('1D').sum().plot(legend=False, ax=axes[1], title='daily totals')
+
+    for ax in axes:
+        ax.set_xlabel('date')
+        ax.set_ylabel('events')
+
+    plt.suptitle('Raw vs. Resampled Data')
+    
+    return axes
+
+
 def elliptical_orbit():
     """Draw an example of a planet with an elliptical orbit around its star."""
     fig, axes = plt.subplots(1, 1)
