@@ -19,7 +19,7 @@ Data analysis has become an essential skill in a variety of domains where knowin
 By the end of this book, you will be equipped with the skills you need to use pandas to ensure the veracity of your data, visualize it for effective decision-making, and reliably reproduce analysis across multiple domains.
 
 ## What You Will Learn
-*Prerequisite: Basic knowledge of Python or past experience with another language (R, SAS, MATLAB, etc.).*
+*Prerequisite: Basic knowledge of Python or past experience with another language (R, SAS, MATLAB, etc.)&mdash;consult the `ch_01/python_101.ipynb` Jupyter notebook for a Python refresher.*
 - Understand how data analysts and scientists gather and analyze data
 - Perform data analysis and data wrangling in Python
 - Combine, group, and aggregate data from multiple sources
@@ -58,10 +58,10 @@ By the end of this book, you will be equipped with the skills you need to use pa
 - [Chapter 12, *The Road Ahead*](./ch_12), contains resources for taking your skills to the next level and further avenues for exploration.
 
 ## Notes on Environment Setup
-Environment setup instructions are in the chapter 1 of the text. If you don't have the book, you must install Python 3.6 or higher, [set up a virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment), [activate it](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment), and then [install the packages listed in requirements.txt](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#using-requirements-files). You can then launch JupyterLab and use the ch_01/checking_your_setup.ipynb Jupyter notebook to check your setup. Consult [this resource](https://anbasile.github.io/programming/2017/06/25/jupyter-venv/) if you have issues with using your virtual environment in Jupyter.
+Environment setup instructions are in the chapter 1 of the text. If you don't have the book, you must install Python 3.6 or higher, [set up a virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment), [activate it](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment), and then [install the packages listed in requirements.txt](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#using-requirements-files). You can then launch JupyterLab and use the `ch_01/checking_your_setup.ipynb` Jupyter notebook to check your setup. Consult [this resource](https://anbasile.github.io/programming/2017/06/25/jupyter-venv/) if you have issues with using your virtual environment in Jupyter.
 
 ## Solutions
-Each chapter comes with exercises. The solutions for chapters 1-11 can be found [here](./solutions).
+Each chapter comes with exercises. The solutions for chapters 1-11 can be found [here](./solutions). Since the exercises in chapter 12 are open-ended, no solution is provided.
 
 ## About the Author
 Stefanie Molin ([@stefmolin](https://github.com/stefmolin)) is a data scientist and software engineer at Bloomberg L.P. in NYC (and hacker in training) tackling tough problems in Information Security particularly revolving around anomaly detection, building tools for gathering data, and knowledge sharing. She has extensive experience in data science, designing anomaly detection solutions, and utilizing machine learning in both R and Python in the AdTech and FinTech industries. She holds a B.S. in Operations Research from Columbia University’s Fu Foundation School of Engineering and Applied Science with minors in Economics and Entrepreneurship and Innovation.
