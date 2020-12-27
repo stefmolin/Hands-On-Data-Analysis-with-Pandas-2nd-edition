@@ -1,3 +1,5 @@
+"""Script for simulating login attempts."""
+
 import argparse
 import datetime as dt
 import os
@@ -33,41 +35,41 @@ if __name__ == '__main__':
     # command line argument parsing
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "days", type=float,
-        help="number of days to simulate from start"
+        'days', type=float,
+        help='number of days to simulate from start'
     )
     parser.add_argument(
-        "start_date", type=str,
+        'start_date', type=str,
         help="datetime to start in the form 'YYYY-MM-DD' or 'YYYY-MM-DD-HH'"
     )
     parser.add_argument(
-        "-s", "--seed", type=int, help="set a seed for reproducibility"
+        '-s', '--seed', type=int, help='set a seed for reproducibility'
     )
     parser.add_argument(
-        "attack_prob", type=float,
-        help="probability of attack in a given hour"
+        'attack_prob', type=float,
+        help='probability of attack in a given hour'
     )
     parser.add_argument(
         "try_all_users_prob", type=float,
-        help="probability attacker tries to guess credentials for all usernames"
+        help='probability attacker tries to guess credentials for all usernames'
     )
     parser.add_argument(
-        "-st", "--stealthy", action='store_true', help="be stealthy? (vary IP addresses?)"
+        '-st', '--stealthy', action='store_true', help='be stealthy? (vary IP addresses?)'
     )
     parser.add_argument(
-        "-m", "--make", action='store_true', help="make user base"
+        '-m', '--make', action='store_true', help='make user base'
     )
     parser.add_argument(
-        "-u", "--userbase", help="file to write the user base to"
+        '-u', '--userbase', help='file to write the user base to'
     )
     parser.add_argument(
-        "-i", "--ip", help="file to write the user-ip address map to"
+        '-i', '--ip', help='file to write the user-ip address map to'
     )
     parser.add_argument(
-        "-l", "--log", help="file to write the attempt log to"
+        '-l', '--log', help='file to write the attempt log to'
     )
     parser.add_argument(
-        "-hl", "--hacklog", help="file to write the hack log to"
+        '-hl', '--hacklog', help='file to write the hack log to'
     )
     args = parser.parse_args()
     user_ip_mapping_file = get_user_base_file_path(args.ip, 'user_ips.json')
@@ -97,9 +99,9 @@ if __name__ == '__main__':
     except ValueError:
         logger.warning(
             f'Could not interpret {args.start_date}, '
-            'using January 1, 2019 at 12AM as start instead'
+            'using January 1, 2020 at 12AM as start instead'
         )
-        start = dt.datetime(2019, 1, 1)
+        start = dt.datetime(2020, 1, 1)
 
 
     end = start + dt.timedelta(days=args.days)
@@ -123,3 +125,4 @@ if __name__ == '__main__':
         logger.info('All done!')
     except:
         logger.error('Oops! Something went wrong...')
+        raise

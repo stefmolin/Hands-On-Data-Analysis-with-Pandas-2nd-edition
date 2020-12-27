@@ -1,3 +1,5 @@
+"""Script for simulating login attempts."""
+
 import argparse
 import datetime as dt
 import os
@@ -33,29 +35,29 @@ if __name__ == '__main__':
     # command line argument parsing
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "days", type=float, help="number of days to simulate from start"
+        'days', type=float, help='number of days to simulate from start'
     )
     parser.add_argument(
-        "start_date", type=str,
+        'start_date', type=str,
         help="datetime to start in the form 'YYYY-MM-DD' or 'YYYY-MM-DD-HH'"
     )
     parser.add_argument(
-        "-m", "--make", action='store_true', help="make user base"
+        '-m', '--make', action='store_true', help='make user base'
     )
     parser.add_argument(
-        "-s", "--seed", type=int, help="set a seed for reproducibility"
+        '-s', '--seed', type=int, help='set a seed for reproducibility'
     )
     parser.add_argument(
-        "-u", "--userbase", help="file to write the user base to"
+        '-u', '--userbase', help='file to write the user base to'
     )
     parser.add_argument(
-        "-i", "--ip", help="file to write the user-ip address map to"
+        '-i', '--ip', help='file to write the user-IP address map to'
     )
     parser.add_argument(
-        "-l", "--log", help="file to write the attempt log to"
+        '-l', '--log', help='file to write the attempt log to'
     )
     parser.add_argument(
-        "-hl", "--hacklog", help="file to write the hack log to"
+        '-hl', '--hacklog', help='file to write the hack log to'
     )
     args = parser.parse_args()
     user_ip_mapping_file = get_user_base_file_path(args.ip, 'user_ips.json')
@@ -106,3 +108,4 @@ if __name__ == '__main__':
         logger.info('All done!')
     except:
         logger.error('Oops! Something went wrong...')
+        raise
