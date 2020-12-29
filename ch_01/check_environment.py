@@ -13,10 +13,10 @@ def run_checks():
     """Check that the packages we need are installed and the Python version is high enough."""
     # check the python version
     print('Using Python in %s:' % sys.prefix)
-    if Version(sys.version) >= '3.6':
+    if Version(sys.version) >= '3.7.1':
         print(OK, 'Python is version %s\n' % sys.version)
     else:
-        print(FAIL, 'Python version 3.6+ is required, but %s is installed.\n' % sys.version)
+        print(FAIL, 'Python version 3.7.1+ is required, but %s is installed.\n' % sys.version)
 
     # read in the requirements
     with open('../requirements.txt', 'r') as file:
@@ -33,10 +33,10 @@ def run_checks():
                     pkg, version = line.split('==')
                 except ValueError:
                     pkg, version = line, None
-                    if pkg == 'imbalanced-learn':
-                        pkg = 'imblearn'
-                    elif pkg == 'scikit-learn':
-                        pkg = 'sklearn'
+                if pkg == 'imbalanced-learn':
+                    pkg = 'imblearn'
+                elif pkg == 'scikit-learn':
+                    pkg = 'sklearn'
 
             requirements[pkg.replace('-', '_')] = version
 
