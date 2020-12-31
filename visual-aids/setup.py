@@ -1,4 +1,5 @@
 from distutils.core import setup
+from glob import glob
 
 setup(
     name='visual_aids',
@@ -17,4 +18,6 @@ setup(
         'statsmodels>=0.9.0',
         'stock_analysis @ git+ssh://git@github.com/stefmolin/stock-analysis.git'
     ],
+    package_data={'data': glob('data/*')},
+    include_package_data=True
 )
