@@ -10,5 +10,5 @@ Afterward, we will walk through setting up a virtual environment for working thr
 
 The end-of-chapter exercises will use the [`exercises.ipynb`](./exercises.ipynb) Jupyter Notebook; solutions to these exercises can be found in the repository's [`solutions/ch_01/`](../solutions/ch_01) directory.
 
-*Tip: Use the [`python_101.ipynb`](./python_101.ipynb) Jupyter Notebook for a crash-course Python refresher, if needed.*
+*Tip: Use the [`python_101.ipynb`](./python_101.ipynb) Jupyter Notebook for a Python crash-course/refresher, if needed.*
 
