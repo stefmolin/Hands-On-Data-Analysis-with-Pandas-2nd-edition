@@ -19,7 +19,7 @@ Data analysis has become an essential skill in a variety of domains where knowin
 By the end of this book, you will be equipped with the skills you need to use pandas to ensure the veracity of your data, visualize it for effective decision-making, and reliably reproduce analysis across multiple domains.
 
 ## What You Will Learn
-*Prerequisite: Basic knowledge of Python or past experience with another language (R, SAS, MATLAB, etc.)&mdash;consult the `ch_01/python_101.ipynb` Jupyter notebook for a Python refresher.*
+*Prerequisite: If you don't have basic knowledge of Python or past experience with another language (R, SAS, MATLAB, etc.), consult the [`ch_01/python_101.ipynb`](./ch_01/python_101.ipynb) Jupyter notebook for a Python crash-course/refresher.*
 - Understand how data analysts and scientists gather and analyze data
 - Perform data analysis and data wrangling in Python
 - Combine, group, and aggregate data from multiple sources
