@@ -29,4 +29,8 @@ def reg_resid_plots(data):
     ):
         for subplot, func in zip(axes, (sns.regplot, sns.residplot)):
             func(x=x, y=y, data=data, ax=subplot, color=color)
+
+            if func == sns.residplot:
+                # mark the residuals as such
+                subplot.set_ylabel('residuals')
     return fig.axes
