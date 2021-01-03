@@ -1,18 +1,21 @@
+"""Utility function for plotting regression and residual plots for all column permutations."""
+
 import itertools
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 def reg_resid_plots(data):
     """
-    Using seaborn, plot the regression and residuals plots
+    Using `seaborn`, plot the regression and residuals plots
     side-by-side for every permutation of 2 columns in the data.
     
     Parameters:
-        - data: A pandas DataFrame
+        - data: A `pandas.DataFrame`
 
     Returns:
-        A matplotlib Axes object.
+        A matplotlib `Axes` object.
     """
     num_cols = data.shape[1]
     permutation_count = num_cols * (num_cols - 1)
