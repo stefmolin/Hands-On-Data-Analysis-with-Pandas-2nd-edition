@@ -1,15 +1,18 @@
+"""Generate a KDE plot with reference lines."""
+
 import itertools
+
 
 def std_from_mean_kde(data):
     """
-    Plot the KDE of the pandas Series along with vertical
-    reference lines for each standard deviation from the mean.
+    Plot the KDE along with vertical reference lines
+    for each standard deviation from the mean.
     
     Parameters:
-        - data: pandas Series with numeric data
+        - data: `pandas.Series` with numeric data
     
     Returns:
-        Matplotlib Axes object.
+        Matplotlib `Axes` object.
     """
     mean_mag, std_mean = data.mean(), data.std()
     

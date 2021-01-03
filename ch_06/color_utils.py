@@ -1,8 +1,11 @@
+"""Utility functions for working with colors."""
+
 import re
 
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import numpy as np
+
 
 def hex_to_rgb_color_list(colors):
     """
@@ -26,7 +29,7 @@ def hex_to_rgb_color_list(colors):
 
         if hex_length not in [3, 6]:
             raise ValueError(
-                'Your colors must be of the form #FFFFFF or #FFF'
+                'Colors must be of the form #FFFFFF or #FFF'
             )
 
         regex = '.' * (hex_length // 3)
@@ -36,6 +39,7 @@ def hex_to_rgb_color_list(colors):
         ]
 
     return colors[0] if len(colors) == 1 else colors
+
 
 def blended_cmap(rgb_color_list):
     """
@@ -47,7 +51,7 @@ def blended_cmap(rgb_color_list):
           for black and white, respectively.
 
     Returns:
-        A matplotlib ListedColormap object with your colormap.
+        A matplotlib `ListedColormap` object
     """
     if not isinstance(rgb_color_list, list):
         raise ValueError('Colors must be passed as a list.')
@@ -86,6 +90,7 @@ def blended_cmap(rgb_color_list):
 
     return ListedColormap(rgbas)
 
+
 def draw_cmap(cmap, values=np.array([[0, 1]]), **kwargs):
     """
     Draw a colorbar for visualizing a colormap.
@@ -93,10 +98,10 @@ def draw_cmap(cmap, values=np.array([[0, 1]]), **kwargs):
     Parameters:
         - cmap: A matplotlib colormap
         - values: The values to use for the colormap, defaults to [0, 1]
-        - kwargs: Additional keyword arguments to pass to `plt.colorbar()`
+        - kwargs: Keyword arguments to pass to `plt.colorbar()`
 
     Returns:
-        A matplotlib colorbar, which you can save with:
+        A matplotlib `Colorbar` object, which you can save with:
         `plt.savefig(<file_name>, bbox_inches='tight')`
     """
     img = plt.imshow(values, cmap=cmap)
