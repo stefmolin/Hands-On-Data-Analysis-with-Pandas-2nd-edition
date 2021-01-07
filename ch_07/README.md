@@ -1,6 +1,6 @@
 # Chapter 7: Financial Analysis &ndash; Bitcoin and the Stock Market
 
-This chapter walks you through the creation of a [Python package for analyzing stocks](https://github.com/stefmolin/stock-analysis) (`stock_analysis`), building upon everything learned in chapters 1-6 and applying it to a financial application.
+This chapter walks you through the creation of the [`stock_analysis`](https://github.com/stefmolin/stock-analysis) Python package, building upon everything learned in chapters 1-6 and applying it to a financial application.
 
 ## Content
 
