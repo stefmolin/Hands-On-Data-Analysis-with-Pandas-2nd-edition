@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | `amazon.csv` | Amazon stock's opening, high, low, and closing price daily, along with volume traded and adjusted close for 2017 through 2018. | The `stock_analysis` package. |
 | `apple.csv` | Apple stock's opening, high, low, and closing price daily, along with volume traded and adjusted close for 2017 through 2018. | The `stock_analysis` package. |
-| `bitcoin.csv` | Bitcoin's opening, high, low, and closing price daily, along with volume traded and market capitalization for 2017 through 2018. | The `stock_analysis` package. |
+| `bitcoin.csv` | Bitcoin's opening, high, low, and closing price daily, along with volume traded and adjusted close for 2017 through 2018. | The `stock_analysis` package. |
 | `facebook.csv` | Facebook stock's opening, high, low, and closing price daily, along with volume traded and adjusted close for 2017 through 2018. | The `stock_analysis` package. |
 | `google.csv` | Google stock's opening, high, low, and closing price daily, along with volume traded and adjusted close for 2017 through 2018. | The `stock_analysis` package. |
 | `netflix.csv` | Netflix stock's opening, high, low, and closing price daily, along with volume traded and adjusted close for 2017 through 2018. | The `stock_analysis` package. |
