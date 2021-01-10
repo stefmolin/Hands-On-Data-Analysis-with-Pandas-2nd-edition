@@ -8,7 +8,7 @@ There are four notebooks that we will work through, each numbered according to w
 
 - [`1-querying_and_merging.ipynb`](./1-querying_and_merging.ipynb): showcases how to query and merge `DataFrame` objects
 - [`2-dataframe_operations.ipynb`](./2-dataframe_operations.ipynb): walks through a variety of data enrichment operations, such as binning and window calculations, and how to perform them efficiently with the `apply()` and `pipe()` methods 
-- [`3-aggregations.ipynb`](./3-aggregations.ipynb): discusses how to perform aggregations on the data, including calculations with the `groupby()` method (i.e. by group membership), pivot tables, and crosstabs
+- [`3-aggregations.ipynb`](./3-aggregations.ipynb): discusses how to perform aggregations on the data, including pivot tables, crosstabs, and calculations based on group membership with the `groupby()` method
 - [`4-time_series.ipynb`](./4-time_series.ipynb): illustrates how to work effectively with time series
 
 -----
