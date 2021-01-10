@@ -1,6 +1,9 @@
+"""Illustration of pipes using window calculations"""
+
+
 def window_calc(df, func, agg_dict, *args, **kwargs):
     """
-    Run a window calculation of your choice on a DataFrame.
+    Run a window calculation of your choice on a `DataFrame` object.
     
     Parameters:
         - df: The DataFrame to run the calculation on.
@@ -14,6 +17,6 @@ def window_calc(df, func, agg_dict, *args, **kwargs):
         - kwargs: Keyword arguments to pass to `func`.
     
     Returns:
-        - A new DataFrame object.
+        - A new `DataFrame` object.
     """
     return df.pipe(func, *args, **kwargs).agg(agg_dict)
