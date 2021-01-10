@@ -6,8 +6,8 @@ def window_calc(df, func, agg_dict, *args, **kwargs):
     Run a window calculation of your choice on a `DataFrame` object.
     
     Parameters:
-        - df: The DataFrame to run the calculation on.
-        - func: The window calculation method that takes df 
+        - df: The `DataFrame` object to run the calculation on.
+        - func: The window calculation method that takes `df`
                 as the first argument.
         - agg_dict: Information to pass to `agg()`, could be a 
                     dictionary mapping the columns to the aggregation 
