@@ -1,4 +1,4 @@
-"""Ch 6 visualizations for illustrating seaborn, reference lines, and itertools."""
+"""Visualizations for illustrating seaborn, reference lines, and itertools."""
 
 import itertools
 
