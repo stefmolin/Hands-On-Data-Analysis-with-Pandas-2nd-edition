@@ -16,11 +16,10 @@ There is also a **bonus** notebook that walks through an example of plotting dat
 
 -----
 
-In addition, we have three Python files that contain functions that we will use in the aforementioned notebooks:
+In addition, we have two Python modules that contain functions that we will use in the aforementioned notebooks:
 
 - [`color_utils.py`](./color_utils.py): includes various functions for working with colors in Python
-- [`reg_resid_plot.py`](./reg_resid_plot.py): contains a function for generating regression and residuals plots for each pair of variables in the dataset using `seaborn`
-- [`std_from_mean_kde.py`](./std_from_mean_kde.py): contains a function for generating a KDE with reference lines for 1, 2, and 3 standard deviations from the mean
+- [`viz.py`](./viz.py): contains one function for generating regression and residuals plots for each pair of variables in the dataset using `seaborn` and another function for generating a KDE with reference lines for 1, 2, and 3 standard deviations from the mean
 
 All the datasets necessary for the aforementioned notebooks, along with information on them, can be found in the [`data/`](./data) directory. The end-of-chapter exercises will use these datasets as well; solutions to the exercises can be found in the repository's [`solutions/ch_06/`](../solutions/ch_06) directory.
 
