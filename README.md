@@ -1,5 +1,6 @@
 # Hands-On Data Analysis with Pandas
-<a href="https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1789615321">  <img src="_img/cover.PNG" alt="Hands-On Data Analysis with Pandas" height="256px" align="right"></a>
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/master) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/blob/master)
+<a href="https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1789615321"><img src="_img/cover.PNG" alt="Hands-On Data Analysis with Pandas" height="256px" align="right"></a>
 
 This is the code repository for my book [Hands-On Data Analysis with Pandas](https://www.packtpub.com/product/hands-on-data-analysis-with-pandas/9781789615326), published by Packt on July 26, 2019 (1st edition) and TBD 2021 (2nd edition).
 
@@ -59,6 +60,8 @@ By the end of this book, you will be equipped with the skills you need to use pa
 
 ## Notes on Environment Setup
 Environment setup instructions are in the chapter 1 of the text. If you don't have the book, you must install Python 3.7.1 or higher, [set up a virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment), [activate it](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment), and then [install the packages listed in requirements.txt](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#using-requirements-files). You can then launch JupyterLab and use the `ch_01/checking_your_setup.ipynb` Jupyter notebook to check your setup. Consult [this resource](https://anbasile.github.io/programming/2017/06/25/jupyter-venv/) if you have issues with using your virtual environment in Jupyter.
+
+Alternatively, consider using this repository on [Binder](https://mybinder.org/v2/gh/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/master) or [Google Colab](https://colab.research.google.com/github/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/blob/master).
 
 ## Solutions
 Each chapter comes with exercises. The solutions for chapters 1-11 can be found [here](./solutions). Since the exercises in chapter 12 are open-ended, no solutions are provided.
