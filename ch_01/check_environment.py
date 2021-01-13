@@ -1,3 +1,5 @@
+"""Check environment for following along with the text."""
+
 from __future__ import print_function
 from distutils.version import LooseVersion as Version
 import importlib
