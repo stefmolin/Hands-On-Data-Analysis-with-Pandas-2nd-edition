@@ -85,3 +85,18 @@ The following resources vary in topic, but be sure to check these out if nothing
 - [Pramp](https://www.pramp.com)
 - [Khan Academy](https://www.khanacademy.org/)
 - [LinkedIn Learning](https://www.linkedin.com/learning/)
+
+<hr>
+<div style="overflow: hidden; margin-bottom: 10px;">
+    <div style="float: left;">
+        <a href="../../ch_11/5-online_learning.ipynb">
+            <button>&#8592; Chapter 11</button>
+        </a>
+    </div>
+    <div style="float: right;">
+        <a href="../../appendix/README.md">
+            <button>Appendix &#8594;</button>
+        </a>
+    </div>
+</div>
+<hr>
