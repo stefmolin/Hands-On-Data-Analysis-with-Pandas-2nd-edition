@@ -14,14 +14,10 @@ Here are some workflow diagrams for reference.
 <hr>
 <div style="overflow: hidden; margin-bottom: 10px;">
     <div style="float: left;">
-        <a href="../../ch_12/README.md">
+        <a href="../ch_12/README.md">
             <button>&#8592; Chapter 12</button>
         </a>
     </div>
-    <div style="float: right;">
-        <a href="../../acknowledgements.md">
-            <button>Acknowledgements &#8594;</button>
-        </a>
-    </div>
+
 </div>
 <hr>
