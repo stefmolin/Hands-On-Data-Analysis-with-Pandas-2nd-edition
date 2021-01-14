@@ -22,7 +22,7 @@ To **Suphannee Sivakorn**: for volunteering to review the drafts. I know you tho
 Get ready to be a famous artist:
 
 <p align="center">
-    <img src="_img/pandas_drawing.PNG?raw=true" width="400" alt="artist rendition of the book">
+    <img src="./_img/pandas_drawing.PNG" width="400" alt="artist rendition of the book">
 </p>
 
 To my colleagues. **Lucy Hao** and **Javon Thompson**: for reviewing the financial analysis code and chapter 7 despite never having met me. Lucy, I am very glad I got the chance to meet you when I gave my lightning talk at the Princeton office. You reassured me that the content of this book is relevant and useful to its audience, and it sounded like you got just as much out of the experience of reviewing that chapter as I did. **Alexander Comerford**: for additional resources in chapter 12 and knitting me desk gloves (paws?) for work. You kept my fingers from freezing, so I could write this book. I'm still waiting for my blanket though...
