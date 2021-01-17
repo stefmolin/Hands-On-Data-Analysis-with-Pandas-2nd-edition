@@ -8,4 +8,4 @@ After discussing how to build a Python package, we will walk through the creatio
 
 The end-of-chapter exercises provide additional exposure to financial data using the `stock_analysis` package; solutions to these exercises can be found in the repository's [`solutions/ch_07/`](../solutions/ch_07) directory.
 
-*Note: if you experience issues collecting the data with the `stock_analysis` package, you can read in the CSV files from the [`data/`](./data) directory to follow along with the text and from the [`exercises/`](./exercises) directory to work through the exercises.*
+*Note: if you experience issues collecting the data with the `stock_analysis` package, you can read in the CSV files from the [`data/`](./data) directory to follow along with the text and work through the exercises.*
