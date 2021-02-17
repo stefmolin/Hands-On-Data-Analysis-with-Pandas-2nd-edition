@@ -107,8 +107,8 @@ def elliptical_orbit():
 
     # formatting
     plt.xlim(-1.25, 1.25)
-    plt.ylim(-0.75, 1.25)
-    plt.legend()
+    plt.ylim(-1.1, 0.75)
+    plt.legend(loc='lower center', ncol=2)
 
     # remove axes
     axes.xaxis.set_visible(False)
