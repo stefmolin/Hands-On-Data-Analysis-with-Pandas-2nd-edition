@@ -45,4 +45,4 @@ def edit_image(filepath, replacements, save=False):
 
 def save_plot(file):
     """Save the current figure."""
-    plt.savefig(file, bbox_inches='tight')
+    plt.savefig(file, dpi=300, bbox_inches='tight')
