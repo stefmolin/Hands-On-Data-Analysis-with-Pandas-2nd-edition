@@ -4,9 +4,9 @@ Writing this book has been a tremendous amount of work, but I have grown a lot t
 
 To my family: for always being there for me as I once again embarked on this crazy journey.
 
-To my friend and reviewer, **Aliki Mavromoustaki**: It's rare to meet someone over video conference and instantly form a friendship, but I am very happy our paths crossed. Even though I told you this was an offer you could refuse, you took on the extra work to review the first drafts, ευχαριστώ. We finally got to work on something together!
+To my friend and reviewer, **Aliki Mavromoustaki**: even though I told you this was an offer you could refuse, you once again took on the extra work to review the first drafts, ευχαριστώ.
 
-To **Felipe Moreno**: for being an extremely supportive manager and my toughest critic. You managed to fit more writing into the margins of each page than I would have thought possible. While this led to rewriting large portions of the earlier chapters for the final drafts, I know it made a huge difference in the quality of the final outcome. Obrigada!
+To **Felipe Moreno**: for being an extremely supportive manager and my toughest critic. You managed to fit more writing into the margins of each page of the first edition than I would have thought possible. While this led to rewriting large portions of the earlier chapters for the final drafts, I know it made a huge difference in the quality of the final outcome. Obrigada! Thankfully, round two was easier...
 
 To **Suphannee Sivakorn**: for volunteering to review the drafts of the first edition. I know you thought I wouldn't make it past chapter 5, but you didn't really know me then...ขอบคุณค่ะ (ka ka ka 🕊️) for all the drawings (and occasional poem). They made me smile when I really needed it and kept me sane. Get ready to be a famous artist:
 
