@@ -90,10 +90,10 @@ def roc_curve():
     ax.set_ylabel('True Positive Rate (TPR)')
 
     handles, labels = ax.get_legend_handles_labels()
-    for i, label in enumerate(labels[1:]):
+    for i, label in enumerate(labels):
         curve_data = data.query(f'label == "{label}"')
-        labels[1 + i] = f'{label}; AUC is {auc(curve_data.x, curve_data.y):.2}'
-    ax.legend(handles=handles[1:], labels=labels[1:])
+        labels[i] = f'{label}; AUC is {auc(curve_data.x, curve_data.y):.2}'
+    ax.legend(handles=handles, labels=labels)
 
     ax.xaxis.set_major_formatter(PercentFormatter(xmax=1))
     ax.yaxis.set_major_formatter(PercentFormatter(xmax=1))
