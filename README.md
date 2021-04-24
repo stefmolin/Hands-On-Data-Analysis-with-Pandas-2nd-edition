@@ -1,4 +1,4 @@
-# Hands-On Data Analysis with Pandas
+# Hands-On Data Analysis with Pandas &ndash; Second Edition
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stefmolin/binder-environments/2nd_edition?urlpath=git-pull?repo=https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/blob/master) [![Nbviewer](https://img.shields.io/badge/render-nbviewer-lightgrey?logo=jupyter)](https://nbviewer.jupyter.org/github/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/tree/master/) [![Purchase the book on Amazon](https://img.shields.io/badge/Amazon-purchase-orange?logo=amazon&logoColor=orange)](https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1800563450)
 <a href="https://www.amazon.com/Hands-Data-Analysis-Pandas-visualization/dp/1789615321"><img src="_img/cover.PNG" alt="Hands-On Data Analysis with Pandas" height="256px" align="right"></a>
 
@@ -11,11 +11,11 @@ This repository contains git tags for the materials as they were at time of publ
 - [2nd_edition](../../tree/2nd_edition)
 
 ## Book Description
-Data analysis has become an essential skill in a variety of domains where knowing how to work with data and extract insights can generate significant value.
+Data analysis has become an essential skill in a variety of domains where knowing how to work with data and extract insights can generate significant value. *Hands-On Data Analysis with Pandas* will show you how to analyze your data, get started with machine learning, and work effectively with the Python libraries often used for data science, such as pandas, NumPy, matplotlib, seaborn, and scikit-learn.
 
-*Hands-On Data Analysis with Pandas* will show you how to analyze your data, get started with machine learning, and work effectively with Python libraries often used for data science, such as pandas, NumPy, matplotlib, seaborn, and scikit-learn. Using real-world datasets, you will learn how to use the powerful pandas library to perform data wrangling to reshape, clean, and aggregate your data. Then, you will learn how to conduct exploratory data analysis by calculating summary statistics and visualizing the data to find patterns. In the concluding chapters, you will explore some applications of anomaly detection, regression, clustering, and classification, using scikit-learn, to make predictions based on past data.
+Using real-world datasets, you will learn how to use the pandas library to perform data wrangling to reshape, clean, and aggregate your data. Then, you will learn how to conduct exploratory data analysis by calculating summary statistics and visualizing the data to find patterns. In the concluding chapters, you will explore some applications of anomaly detection, regression, clustering, and classification using scikit-learn to make predictions based on past data.
 
-By the end of this book, you will be equipped with the skills you need to use pandas to ensure the veracity of your data, visualize it for effective decision-making, and reliably reproduce analysis across multiple domains.
+This updated edition will equip you with the skills you need to use pandas 1.x to efficiently perform various data manipulation tasks, reliably reproduce analyses, and visualize your data for effective decision making—valuable knowledge that can be applied across multiple domains.
 
 ## What You Will Learn
 *Prerequisite: If you don't have basic knowledge of Python or past experience with another language (R, SAS, MATLAB, etc.), consult the [`ch_01/python_101.ipynb`](./ch_01/python_101.ipynb) Jupyter notebook for a Python crash-course/refresher.*
