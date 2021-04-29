@@ -56,6 +56,9 @@ This updated edition will equip you with the skills you need to use pandas 1.x t
 
 - [Chapter 12, *The Road Ahead*](./ch_12), contains resources for taking your skills to the next level and further avenues for exploration.
 
+## What's New in This Edition?
+All the code examples have been updated for newer versions of the libraries used (see the [requirements.txt](./requirements.txt) file for the full list). The second edition also features new/revised examples highlighting new features. For `pandas` in particular, the first edition uses a much older version than what is currently available (pre 1.0), and this edition brings the content up to date with the latest version (1.x). You can look through the `pandas` [release notes](https://pandas.pydata.org/docs/whatsnew/index.html) to get an idea of all the changes that have happened since the version of `pandas` used in the first edition (0.23.4). In addition, there are significant changes to the content of some chapters, while others have new and improved examples and/or datasets.
+
 ## Notes on Environment Setup
 Environment setup instructions are in the chapter 1 of the text. If you don't have the book, you will need to install Python 3.7.1 or higher, [set up a virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment), [activate it](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#activating-a-virtual-environment), and then [install the packages listed in requirements.txt](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#using-requirements-files). You can then launch JupyterLab and use the `ch_01/checking_your_setup.ipynb` Jupyter notebook to check your setup. Consult [this resource](https://anbasile.github.io/programming/2017/06/25/jupyter-venv/) if you have issues with using your virtual environment in Jupyter.
 
