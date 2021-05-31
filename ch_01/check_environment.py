@@ -21,7 +21,7 @@ def run_checks():
         print(FAIL, 'Python version 3.7.1+ is required, but %s is installed.\n' % sys.version)
 
     # read in the requirements
-    with open('../requirements.txt', 'r') as file:
+    with open('c:/Users/bussj/OneDrive/XPAND/git/Hands-On-Data-Analysis-with-Pandas-2nd-edition/requirements.txt', 'r') as file:
         requirements = {}
         for line in file.read().splitlines():
             github_package = re.search(github_package_pattern, line)
