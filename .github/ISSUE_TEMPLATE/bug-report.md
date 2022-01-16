@@ -9,6 +9,7 @@ assignees: ''
 
 ### Required attestation
 - [ ] I am using a virtual environment that matches the book specifications **exactly**.
+- [ ] I confirm that my fork is up to date with the latest changes in this repository.
 - [ ] I have checked that this issue has not already been reported or resolved [here](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/issues?q=is%3Aissue).
 - [ ] I have confirmed that my results match those obtained when running the code using [this](https://mybinder.org/v2/gh/stefmolin/binder-environments/2nd_edition?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fstefmolin%252FHands-On-Data-Analysis-with-Pandas-2nd-edition%26urlpath%3Dlab%252Ftree%252FHands-On-Data-Analysis-with-Pandas-2nd-edition%252F%26branch%3Dmaster) Binder environment.
 
