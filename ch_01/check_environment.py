@@ -32,7 +32,11 @@ def run_checks():
                 if line.startswith('./'):
                     line = line.replace('./', '')
                 try:
-                    pkg, version = line.split('==')
+                    if '>=' in line:
+                        pkg, versions = line.split('>=')
+                        version = versions.split(',<=')
+                    else:
+                        pkg, version = line.split('==')
                 except ValueError:
                     pkg, version = line, None
                 if pkg == 'imbalanced-learn':
@@ -48,9 +52,15 @@ def run_checks():
             mod = importlib.import_module(pkg)
             if req_version:
                 version = mod.__version__
-                if Version(version) != req_version:
-                    print(FAIL, '%s version %s is required, but %s installed.' % (pkg, req_version, version))
-                    continue
+                if isinstance(req_version, list):
+                    min_version, max_version = req_version
+                    if Version(version) < min_version or Version(version) > max_version:
+                        print(FAIL, '%s version >= %s and <= %s is required, but %s installed.' % (pkg, min_version, max_version, version))
+                        continue
+                else:
+                    if Version(version) != req_version:
+                        print(FAIL, '%s version %s is required, but %s installed.' % (pkg, req_version, version))
+                        continue
             print(OK, '%s' % pkg)
         except ImportError:
             print(FAIL, '%s not installed.' % pkg)
