@@ -15,7 +15,7 @@ def confusion_matrix():
     """Create a visual aid for understanding the confusion matrix."""
 
     ax = sns.heatmap(
-        np.array([[1, 0], [0, 1]]), cbar=False,cmap=ListedColormap(['whitesmoke', 'lightgray']),
+        np.array([[1, 0], [0, 1]]), cbar=False, cmap=ListedColormap(['whitesmoke', 'lightgray']),
         annot=np.array([
             ['TP\n(True Positive)', 'FP\n(False Positive)'], 
             ['FN\n(False Negative)', 'TN\n(True Negative)']
