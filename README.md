@@ -71,10 +71,8 @@ If you have Python 3.9+ installed, you should create a virtual environment with 
 $ conda env create --name book_env python=3.8
 ```
 
-### M1 Mac Users
-Since the M1 Mac came out after the release of this edition, the versions required are higher than for other installations, as such there may be slight discrepancies with the scikit-learn results.
-
-Make sure to use Python 3.9. If you decide to use `conda`, make sure to first install `mamba` and use that to install everything using the `environment.yml` file instead:
+### Apple Silicon Users
+Make sure to use Python 3.8 if you plan to install packages with `pip`. If you decide to use `conda`, make sure to first install `mamba` and use that to install everything using the `environment.yml` file instead:
 
 ```shell
 $ conda install mamba -n base -c conda-forge
