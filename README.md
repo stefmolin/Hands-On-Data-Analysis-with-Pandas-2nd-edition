@@ -68,7 +68,7 @@ Alternatively, consider using this repository on [Binder](https://mybinder.org/v
 If you have Python 3.9+ installed, you should create a virtual environment with `conda` and specify Python 3.8 as discussed in [this issue](https://github.com/stefmolin/Hands-On-Data-Analysis-with-Pandas-2nd-edition/issues/2):
 
 ```shell
-$ conda env create --name book_env python=3.8
+$ conda create --name book_env python=3.8
 ```
 
 ### Apple Silicon Users
