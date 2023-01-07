@@ -72,7 +72,7 @@ $ conda create --name book_env python=3.8
 ```
 
 ### Apple Silicon Users
-Make sure to use Python 3.8 if you plan to install packages with `pip`. If you decide to use `conda`, make sure to first install `mamba` and use that to install everything using the `environment.yml` file instead:
+Make sure to use Python 3.9 if you plan to install packages with `pip`. If you decide to use `conda`, make sure to first install `mamba` and use that to install everything using the `environment.yml` file instead:
 
 ```shell
 $ conda install mamba -n base -c conda-forge
