@@ -71,13 +71,21 @@ If you have Python 3.9+ installed, you should create a virtual environment with 
 $ conda create --name book_env python=3.8
 ```
 
-### Apple Silicon Users
-Make sure to use Python 3.9 if you plan to install packages with `pip`. If you decide to use `conda`, make sure to first install `mamba` and use that to install everything using the `mac_environment.yml` file instead:
+Alternatively, you can use the `environment.yml` file, which will create the environment and install all the required packages:
 
 ```shell
 $ conda install mamba -n base -c conda-forge
 $ cd Hands-On-Data-Analysis-with-Pandas-2nd-edition
-~/Hands-On-Data-Analysis-with-Pandas-2nd-edition$ mamba env create --file mac_environment.yml
+~/Hands-On-Data-Analysis-with-Pandas-2nd-edition$ mamba env create --file environment.yml
+```
+
+### Apple Silicon Users
+Make sure to use Python 3.9 if you plan to install packages with `pip`. If you decide to use `conda`, make sure to first install `mamba` and use that to install everything using the `m1_environment.yml` file instead:
+
+```shell
+$ conda install mamba -n base -c conda-forge
+$ cd Hands-On-Data-Analysis-with-Pandas-2nd-edition
+~/Hands-On-Data-Analysis-with-Pandas-2nd-edition$ mamba env create --file m1_environment.yml
 ```
 
 ## Solutions
