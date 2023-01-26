@@ -22,5 +22,5 @@ dependencies:
     - pip:
         - git+https://github.com/stefmolin/login-attempt-simulator.git@2nd_edition
         - git+https://github.com/stefmolin/ml-utils.git@2nd_edition
-        - git+https://github.com/stefmolin/stock-analysis.git@2nd_edition_patch_1
+        - git+https://github.com/stefmolin/stock-analysis.git@2nd_edition
         - ./visual-aids
