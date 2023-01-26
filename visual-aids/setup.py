@@ -16,7 +16,7 @@ setup(
         'pandas>=0.23.4',
         'seaborn>=0.9.0',
         'statsmodels>=0.9.0',
-        'stock_analysis @ git+https://github.com/stefmolin/stock-analysis.git@2nd_edition_patch_1'
+        'stock_analysis @ git+https://github.com/stefmolin/stock-analysis.git@2nd_edition'
     ],
     package_data={'data': glob('data/*')},
     include_package_data=True
