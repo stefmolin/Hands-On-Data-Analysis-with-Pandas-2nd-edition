@@ -49,9 +49,9 @@ jobs:
       - name: strip hardcoded Python version from environment for testing
         run: |
           if [[ ${{ matrix.os }} == "macos"* ]]; then
-              sed -i '' -e '/- python=/d' environment.yml;
+              sed -i '' -e '/- python[>=]/d' environment.yml;
           else
-              sed -i -e '/- python=/d' environment.yml;
+              sed -i -e '/- python[>=]/d' environment.yml;
           fi;
 
       # create the conda env
