@@ -9,7 +9,7 @@ name: Env Build
 on:
   # Triggers the workflow on push events
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
   # Trigger on pull request always (note the trailing colon)
   pull_request:
