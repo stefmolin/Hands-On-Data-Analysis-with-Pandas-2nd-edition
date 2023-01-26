@@ -1,0 +1,78 @@
+# This workflow builds the book environment on Mac, Linux, and Windows for
+# multiple versions of Python to confirm it can be properly installed.
+# 
+# Author: Stefanie Molin
+
+name: Env Build
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events
+  push:
+    branches: [ "main" ]
+
+  # Trigger on pull request always (note the trailing colon)
+  pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Run this every month
+  schedule:
+    - cron: "11 22 11 * *"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    name: Python ${{ matrix.python-version }}, ${{ matrix.os }}
+
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+    
+    defaults:
+      run:
+        shell: bash -el {0}
+
+    strategy:
+        fail-fast: false
+        matrix:
+            os: [macos-latest, ubuntu-latest, windows-latest]
+            python-version: ["3.7", "3.8", "3.9"]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      # remove the Python version from the file for testing
+      - name: strip hardcoded Python version from environment for testing
+        run: |
+          if [[ ${{ matrix.os }} == "macos"* ]]; then
+              sed -i '' -e '/- python/d' environment.yml;
+          else
+              sed -i -e '/- python/d' environment.yml;
+          fi;
+
+      # create the conda env
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          auto-update-conda: true
+          miniforge-variant: Mambaforge
+          use-mamba: true
+          channel-priority: true
+          activate-environment: book_env
+          environment-file: environment.yml
+
+      - name: conda diagnostics
+        run: |
+          conda info
+          conda list
+          conda config --show-sources
+          conda config --show
+          printenv | sort
+
+      - name: verify install
+        run: cd ch_01 && python check_environment.py
+
