@@ -7,7 +7,7 @@ The `visual_aids` package is automatically installed when you use the `requireme
 
 ```shell
 (book_env) $ cd path/to/this/repo
-(book_env) $ pip3 install visual-aids
+(book_env) $ pip3 install ./visual-aids
 ```
 
 ## Usage
