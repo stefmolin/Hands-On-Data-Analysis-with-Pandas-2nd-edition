@@ -6,7 +6,7 @@ dependencies:
     - cartopy=0.18.0
     - imbalanced-learn=0.7.0
     - ipympl=0.6.2
-    - jupyterlab>=3.0.4
+    - jupyterlab>=3.0.4,<=3.5.3
     - matplotlib=3.3.2
     - numpy>=1.19.2,<=1.19.5
     - pandas=1.2.0
