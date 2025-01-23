@@ -43,6 +43,10 @@ jobs:
         matrix:
             os: [macos-latest, ubuntu-latest, windows-latest]
             python-version: ["3.7", "3.8", "3.9"]
+            exclude:
+              # macOS arm runners don't have native build for 3.7
+              - os: macos-latest
+                python-version: "3.7"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
