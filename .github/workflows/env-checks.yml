@@ -1,6 +1,6 @@
 # This workflow builds the book environment on Mac, Linux, and Windows for
 # multiple versions of Python to confirm it can be properly installed.
-# 
+#
 # Author: Stefanie Molin
 
 name: Env Build
@@ -33,7 +33,7 @@ jobs:
 
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
-    
+
     defaults:
       run:
         shell: bash -el {0}
@@ -52,7 +52,7 @@ jobs:
     steps:
       # checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
-      
+
       # remove the Python version from the file for testing
       - name: strip hardcoded Python version from environment for testing
         run: |
@@ -82,4 +82,3 @@ jobs:
 
       - name: verify install
         run: cd ch_01 && python check_environment.py
-
